@@ -2,7 +2,7 @@
 
 namespace SmartDog23\AzureFaceApi;
 
-class Regions {
+class AzureRegions {
 
     const AUSTRALIA_EAST = 'australiaeast';
     const BRAZIL_SOUTH = 'brazilsouth';
@@ -30,5 +30,10 @@ class Regions {
 
     const WEST_US = 'westus';
     const WEST_US_2 = 'westus2';
+
+    static public function getApiBaseUrl($region)
+    {
+        return 'https://'.$region.'.api.cognitive.microsoft.com/face/v1.0/';
+    }
 
 }

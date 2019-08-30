@@ -21,24 +21,11 @@ class FaceDetect {
 
     public function execute()
     {
-        $headers = $this->_options->headers()->toArray();
-        $parameters = $this->_options->parameters()->toArray();
-        $body = $this->_options->body()->toArray();
-        //dd($parameters);
         $options = [];
-        $options['headers'] = $headers;
-        $options['query'] = $parameters;
-        $options['body'] = json_encode($body);
-        //dd($options);
-        //dump(json_decode(json_encode($headers, true)));
-        //dump(json_decode(json_encode($parameters, true)));
-        //dump((array) $headers);
-        //try {
+        $options['headers'] = $this->_options->headers()->toArray();
+        $options['query'] = $this->_options->parameters()->toArray();
+        $options['body'] = json_encode($this->_options->body()->toArray());
         $response = $this->_client->request('POST', 'detect', $options);
-
-        //} catch(Exception $e) {
-         //   echo $e->getMessage();
-        //}
         dump($response->getBody()->getContents());
     }
 }

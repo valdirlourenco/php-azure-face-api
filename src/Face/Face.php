@@ -15,7 +15,7 @@ class Face {
 
     public function detect($options = null)
     {
-        $faceDetect = new FaceDetect($this->_client, $options);
+        new FaceDetect($this->_client, $options);
         
     }
 

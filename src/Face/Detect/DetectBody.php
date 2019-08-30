@@ -1,8 +1,8 @@
-<?php 
+<?php
 
-namespace SmartDog23\AzureFaceApi\Face\FaceDetect;
+namespace SmartDog23\AzureFaceApi\Face\Detect;
 
-class FaceDetectBody {
+class DetectBody {
 
     private $_url;
 

@@ -1,12 +1,12 @@
-<?php 
+<?php
 
-namespace SmartDog23\AzureFaceApi\Face\FaceDetect;
+namespace SmartDog23\AzureFaceApi\Face\Detect;
 
 use SmartDog23\AzureFaceApi\Face\FaceDetect\FaceDetectParameters;
 use SmartDog23\AzureFaceApi\Face\FaceDetect\FaceDetectHeaders;
 use SmartDog23\AzureFaceApi\Face\FaceDetect\FaceDetectBody;
 
-class FaceDetectOptions {
+class DetectOptions {
 
     private $_parameters;
     private $_headers;
@@ -20,7 +20,7 @@ class FaceDetectOptions {
    public function parameters() 
    {
         if($this->_parameters == null) {
-            $this->_parameters = new FaceDetectParameters;
+            $this->_parameters = new DetectParameters;
         }
         return $this->_parameters;
    }
@@ -28,7 +28,7 @@ class FaceDetectOptions {
    public function headers() 
    {
         if($this->_headers == null) {
-            $this->_headers = new FaceDetectHeaders;
+            $this->_headers = new DetectHeaders;
         }
         return $this->_headers;
    }
@@ -36,7 +36,7 @@ class FaceDetectOptions {
    public function body() 
    {
         if($this->_body == null) {
-            $this->_body = new FaceDetectBody;
+            $this->_body = new DetectBody;
         }
         return $this->_body;
    }

@@ -2,7 +2,7 @@
 
 namespace SmartDog23\AzureFaceApi\Face;
 
-use SmartDog23\AzureFaceApi\Face\FaceDetect\FaceDetect;
+use SmartDog23\AzureFaceApi\Face\Detect\Detect;
 
 class Face {
 
@@ -15,7 +15,7 @@ class Face {
 
     public function detect($options = null)
     {
-        new FaceDetect($this->_client, $options);
+        new Detect($this->_client, $options);
         
     }
 

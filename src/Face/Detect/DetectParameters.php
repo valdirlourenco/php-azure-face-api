@@ -1,10 +1,10 @@
-<?php 
+<?php
 
-namespace SmartDog23\AzureFaceApi\Face\FaceDetect;
+namespace SmartDog23\AzureFaceApi\Face\Detect;
 
 use SmartDog23\AzureFaceApi\AzureFaceApi;
 
-class FaceDetectParameters {
+class DetectParameters {
 
     private $_returnFaceId;
     private $_returnFaceLandmarks;

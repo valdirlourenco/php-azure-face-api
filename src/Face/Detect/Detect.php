@@ -1,10 +1,8 @@
 <?php 
 
-namespace SmartDog23\AzureFaceApi\Face\FaceDetect;
+namespace SmartDog23\AzureFaceApi\Face\Detect;
 
-use SmartDog23\AzureFaceApi\Face\FaceDetect\FaceDetectOptions;
-
-class FaceDetect {
+class Detect {
 
     private $_client;
     private $_options;
@@ -12,7 +10,7 @@ class FaceDetect {
     public function __construct($client, $options = null)
     {
         if(is_null($options)) {
-            $options = new FaceDetectOptions();
+            $options = new DetectOptions();
         }
         $this->_options = $options;
         $this->_client = $client;

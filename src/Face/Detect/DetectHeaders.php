@@ -1,10 +1,10 @@
-<?php 
+<?php
 
-namespace SmartDog23\AzureFaceApi\Face\FaceDetect;
+namespace SmartDog23\AzureFaceApi\Face\Detect;
 
 use SmartDog23\AzureFaceApi\AzureFaceApiHeaders;
 
-class FaceDetectHeaders extends AzureFaceApiHeaders {
+class DetectHeaders extends AzureFaceApiHeaders {
 
     public function __construct()
     {

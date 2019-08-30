@@ -16,7 +16,7 @@ class CreateOptions {
    public function parameters() 
    {
         if($this->_parameters == null) {
-            $this->_parameters = new FaceDetectParameters;
+            $this->_parameters = new CreateParameters;
         }
         return $this->_parameters;
    }
@@ -24,7 +24,7 @@ class CreateOptions {
    public function headers() 
    {
         if($this->_headers == null) {
-            $this->_headers = new FaceDetectHeaders;
+            $this->_headers = new CreateHeaders;
         }
         return $this->_headers;
    }
@@ -32,7 +32,7 @@ class CreateOptions {
    public function body() 
    {
         if($this->_body == null) {
-            $this->_body = new FaceDetectBody;
+            $this->_body = new CreateBody;
         }
         return $this->_body;
    }

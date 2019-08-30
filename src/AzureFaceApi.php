@@ -3,6 +3,7 @@
 namespace SmartDog23\AzureFaceApi;
 
 use SmartDog23\AzureFaceApi\Face\Face;
+use SmartDog23\AzureFaceApi\LargePersonGroup\LargePersonGroup;
 use SmartDog23\AzureFaceApi\AzureRegions;
 use SmartDog23\AzureFaceApi\AzureHttpClient;
 
@@ -32,6 +33,14 @@ class AzureFaceApi {
     {
         if($this->_face == null) {
             $this->_face = new Face($this->_client);
+        }
+        return $this->_face;
+    }
+
+    public function largePersonGroup()
+    {
+        if($this->_face == null) {
+            $this->_face = new LargePersonGroup($this->_client);
         }
         return $this->_face;
     }

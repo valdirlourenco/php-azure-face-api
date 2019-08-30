@@ -23,7 +23,8 @@ class Create {
         $options['headers'] = $this->_options->headers()->toArray();
         $options['query'] = $this->_options->parameters()->toArray();
         $options['body'] = json_encode($this->_options->body()->toArray());
-        $response = $this->_client->request('PUT', 'largepersongroups', $options);
+        $url = 'largepersongroups/'.$this->_options->parameters()->getLargePersonGroupId();
+        $response = $this->_client->request('PUT', $url, $options);
         dump($response->getBody()->getContents());
     }
 }

@@ -2,24 +2,42 @@
 
 namespace SmartDog23\AzureFaceApi\LargePersonGroup\Create;
 
+use SmartDog23\AzureFaceApi\AzureFaceApi;
+
 class CreateBody {
 
-    private $_url;
+    private $_name;
+    private $_userData;
+    private $_recognitionModel;
 
     public function __construct()
     {
-
+        $this->_name = '';
+        $this->_userData = '';
+        $this->_recognitionModel = AzureFaceApi::RECOGNITION_02;
     }
 
-    public function url($value)
+    public function name($value)
     {
-        $this->_url = $value;
+        $this->_name = $value;
+    }
+
+    public function userData($value)
+    {
+        $this->_userData = $value;
+    }
+
+    public function recognitionModel($value)
+    {
+        $this->_recognitionModel = $value;
     }
 
     public function toArray()
     {
         $return = [];
-        $return['url'] = $this->_url;
+        $return['name'] = $this->_name;
+        $return['userData'] = $this->_userData;
+        $return['recognitionModel'] = $this->_recognitionModel;
         return $return;
     }
 

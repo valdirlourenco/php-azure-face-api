@@ -13,6 +13,22 @@ class DetectParameters {
     private $_returnRecognitionModel;
     private $_detectionModel;
 
+    const ATTRIBUTE_AGE = 'age';
+    const ATTRIBUTE_GENDER = 'gender';
+    const ATTRIBUTE_HEAD_POSE = 'headPose';
+    const ATTRIBUTE_SMILE = 'smile';
+    const ATTRIBUTE_FACIAL_HAIR = 'facialHair';
+    const ATTRIBUTE_GLASSES = 'glasses';
+    const ATTRIBUTE_EMOTION = 'emotion';
+    const ATTRIBUTE_HAIR = 'hair';
+    const ATTRIBUTE_MAKEUP = 'makeup';
+    const ATTRIBUTE_OCCLUSION = 'occlusion';
+    const ATTRIBUTE_ACCESSORIES = 'accessories';
+    const ATTRIBUTE_BLUR = 'blur';
+    const ATTRIBUTE_EXPOSURE = 'exposure';
+    const ATTRIBUTE_NOISE = 'noise';
+    const ATTRIBUTE_ALL = 'age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise';
+
     public function __construct()
     {
         $this->_returnFaceId = 'true';
@@ -33,9 +49,12 @@ class DetectParameters {
         $this->_returnFaceLandmarks = $value;
     }
 
-    public function returnFaceAttributes($value)
+    public function returnFaceAttributes()
     {
-        $this->_returnFaceAttributes = $value;
+        $args = func_get_args();
+        $attributes = '';
+        if(!is_null($args)) { $attributes = implode(',', $args); }
+        $this->_returnFaceAttributes = $attributes;
     }
 
     public function recognitionModel($value)

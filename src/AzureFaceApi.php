@@ -20,6 +20,7 @@ class AzureFaceApi {
     const DETECTION_02 = 'detection_02';
 
     private $_face;
+    private static $_largePersonGroup;
 
     public function __construct($key, $region) 
     {
@@ -39,10 +40,10 @@ class AzureFaceApi {
 
     public function largePersonGroup()
     {
-        if($this->_face == null) {
-            $this->_face = new LargePersonGroup($this->_client);
+        if($this->_largePersonGroup == null) {
+            $this->_largePersonGroup = new LargePersonGroup($this->_client);
         }
-        return $this->_face;
+        return $this->_largePersonGroup;
     }
 
 }

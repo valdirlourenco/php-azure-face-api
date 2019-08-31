@@ -4,6 +4,7 @@ namespace SmartDog23\AzureFaceApi;
 
 use SmartDog23\AzureFaceApi\Face\Face;
 use SmartDog23\AzureFaceApi\LargePersonGroup\LargePersonGroup;
+use SmartDog23\AzureFaceApi\LargePersonGroupPerson\LargePersonGroupPerson;
 use SmartDog23\AzureFaceApi\AzureRegions;
 use SmartDog23\AzureFaceApi\AzureHttpClient;
 
@@ -20,7 +21,8 @@ class AzureFaceApi {
     const DETECTION_02 = 'detection_02';
 
     private $_face;
-    private static $_largePersonGroup;
+    private $_largePersonGroup;
+    private $_largePersonGroupPerson;
 
     public function __construct($key, $region) 
     {
@@ -44,6 +46,14 @@ class AzureFaceApi {
             $this->_largePersonGroup = new LargePersonGroup($this->_client);
         }
         return $this->_largePersonGroup;
+    }
+
+    public function largePersonGroupPerson()
+    {
+        if($this->_largePersonGroupPerson == null) {
+            $this->_largePersonGroupPerson = new LargePersonGroupPerson($this->_client);
+        }
+        return $this->_largePersonGroupPerson;
     }
 
 }

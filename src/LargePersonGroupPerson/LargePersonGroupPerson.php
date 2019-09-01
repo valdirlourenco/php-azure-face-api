@@ -2,6 +2,7 @@
 
 namespace SmartDog23\AzureFaceApi\LargePersonGroupPerson;
 
+use SmartDog23\AzureFaceApi\LargePersonGroupPerson\AddFace\AddFace;
 use SmartDog23\AzureFaceApi\LargePersonGroupPerson\Create\Create;
 
 class LargePersonGroupPerson {
@@ -13,14 +14,14 @@ class LargePersonGroupPerson {
         $this->_client = $client;
     }
 
+    public function addFace($options = null)
+    {
+        new AddFace($this->_client, $options);
+    }
+
     public function create($options = null)
     {
         new Create($this->_client, $options);
-
-    }
-
-    public function addFace()
-    {
 
     }
 

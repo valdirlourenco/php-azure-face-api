@@ -3,6 +3,7 @@
 namespace SmartDog23\AzureFaceApi\LargePersonGroup;
 
 use SmartDog23\AzureFaceApi\LargePersonGroup\Create\Create;
+use SmartDog23\AzureFaceApi\LargePersonGroup\Train\Train;
 
 class LargePersonGroup {
 
@@ -39,9 +40,9 @@ class LargePersonGroup {
 
     }
 
-    public function train()
+    public function train($options = null)
     {
-
+        new Train($this->_client, $options);
     }
 
     public function update()

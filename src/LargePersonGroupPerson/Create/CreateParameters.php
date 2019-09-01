@@ -27,7 +27,4 @@ class CreateParameters {
         $return['largePersonGroupId'] = $this->_largePersonGroupId;
         return $return;
     }
-
-
-
 }

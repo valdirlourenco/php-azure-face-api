@@ -5,13 +5,10 @@ namespace SmartDog23\AzureFaceApi;
 use SmartDog23\AzureFaceApi\Face\Face;
 use SmartDog23\AzureFaceApi\LargePersonGroup\LargePersonGroup;
 use SmartDog23\AzureFaceApi\LargePersonGroupPerson\LargePersonGroupPerson;
-use SmartDog23\AzureFaceApi\AzureRegions;
-use SmartDog23\AzureFaceApi\AzureHttpClient;
 
 class AzureFaceApi {
 
     private $_key;
-    // private $_region;
     private $_baseUri;
     private $_client;
 

@@ -2,8 +2,6 @@
 
 namespace SmartDog23\AzureFaceApi\LargePersonGroupPerson\Create;
 
-use SmartDog23\AzureFaceApi\AzureFaceApi;
-
 class CreateBody {
 
     private $_name;

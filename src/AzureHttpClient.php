@@ -11,13 +11,13 @@ class AzureHttpClient {
     public function __construct($options, $key)
     {
         $this->_client = new Client($options);
-        $this->key = $key;
+        $this->_key = $key;
     }
 
     public function request($method, $uri, $options)
     {
         $headers = &$options['headers'];
-        $headers['Ocp-Apim-Subscription-Key'] = $this->key;
+        $headers['Ocp-Apim-Subscription-Key'] = $this->_key;
         dump($options);
         return $this->_client->request($method, $uri, $options);
     }

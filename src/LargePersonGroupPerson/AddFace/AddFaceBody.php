@@ -2,8 +2,6 @@
 
 namespace SmartDog23\AzureFaceApi\LargePersonGroupPerson\AddFace;
 
-use SmartDog23\AzureFaceApi\AzureFaceApi;
-
 class AddFaceBody {
 
     private $_url;

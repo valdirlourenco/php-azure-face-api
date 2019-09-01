@@ -10,7 +10,6 @@ class AddFaceOptions {
 
     public function __construct()
     {
-        
     }
 
    public function parameters() 

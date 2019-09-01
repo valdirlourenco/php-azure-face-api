@@ -10,7 +10,6 @@ class TrainOptions {
 
     public function __construct()
     {
-        
     }
 
    public function parameters() 

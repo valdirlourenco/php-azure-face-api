@@ -10,7 +10,6 @@ class DetectOptions {
 
     public function __construct()
     {
-        
     }
 
    public function parameters() 

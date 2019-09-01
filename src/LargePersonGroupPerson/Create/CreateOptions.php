@@ -10,7 +10,6 @@ class CreateOptions {
 
     public function __construct()
     {
-        
     }
 
    public function parameters() 

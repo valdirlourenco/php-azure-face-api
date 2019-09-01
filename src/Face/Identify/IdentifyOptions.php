@@ -10,7 +10,6 @@ class IdentifyOptions {
 
     public function __construct()
     {
-        
     }
 
    public function parameters() 

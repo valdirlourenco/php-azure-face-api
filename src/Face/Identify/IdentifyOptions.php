@@ -1,8 +1,8 @@
 <?php
 
-namespace SmartDog23\AzureFaceApi\Face\Detect;
+namespace SmartDog23\AzureFaceApi\Face\Identify;
 
-class DetectOptions {
+class IdentifyOptions {
 
     private $_parameters;
     private $_headers;
@@ -16,7 +16,7 @@ class DetectOptions {
    public function parameters() 
    {
         if($this->_parameters == null) {
-            $this->_parameters = new DetectParameters;
+            $this->_parameters = new IdentifyParameters;
         }
         return $this->_parameters;
    }
@@ -24,7 +24,7 @@ class DetectOptions {
    public function headers() 
    {
         if($this->_headers == null) {
-            $this->_headers = new DetectHeaders;
+            $this->_headers = new IdentifyHeaders;
         }
         return $this->_headers;
    }
@@ -32,7 +32,7 @@ class DetectOptions {
    public function body() 
    {
         if($this->_body == null) {
-            $this->_body = new DetectBody;
+            $this->_body = new IdentifyBody;
         }
         return $this->_body;
    }

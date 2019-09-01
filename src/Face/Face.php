@@ -3,6 +3,7 @@
 namespace SmartDog23\AzureFaceApi\Face;
 
 use SmartDog23\AzureFaceApi\Face\Detect\Detect;
+use SmartDog23\AzureFaceApi\Face\Identify\Identify;
 
 class Face {
 
@@ -29,9 +30,9 @@ class Face {
         
     }
 
-    public function identify()
+    public function identify($options = null)
     {
-        
+        new Identify($this->_client, $options);
     }
 
     public function verify()

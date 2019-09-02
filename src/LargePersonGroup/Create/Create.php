@@ -2,8 +2,11 @@
 
 namespace SmartDog23\AzureFaceApi\LargePersonGroup\Create;
 
+use SmartDog23\AzureFaceApi\AzureHttpClient;
+
 class Create {
 
+    /** @var AzureHttpClient */
     private $_client;
     private $_options;
 

@@ -43,7 +43,7 @@ class CreateBody {
 
     public function toJson()
     {
-        return $this->toArray();
+        return json_encode($this->toArray());
     }
 
 }

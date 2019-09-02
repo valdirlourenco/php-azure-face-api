@@ -25,6 +25,6 @@ class Train {
         $options['body'] = $this->_options->body()->toJson();
         $url = 'largepersongroups/'.$this->_options->parameters()->getLargePersonGroupId().'/train';
         $response = $this->_client->request('POST', $url, $options);
-        dump($response->getBody()->getContents());
+        return $response;
     }
 }

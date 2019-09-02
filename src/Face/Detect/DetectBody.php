@@ -22,4 +22,9 @@ class DetectBody {
         return $return;
     }
 
+    public function toJson()
+    {
+        return json_encode($this->toArray());
+    }
+
 }

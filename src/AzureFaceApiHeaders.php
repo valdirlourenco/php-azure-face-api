@@ -24,8 +24,6 @@ class AzureFaceApiHeaders {
     {
         $this->_paramsArray = [];
         $this->_paramsArray['Content-Type'] = $this->_contentType;
-        //$this->_paramsArray['Ocp-Apim-Subscription-Key'] = $this->_key;
         return $this->_paramsArray;
     }
-
 }

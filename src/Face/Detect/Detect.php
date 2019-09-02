@@ -22,8 +22,8 @@ class Detect {
         $options = [];
         $options['headers'] = $this->_options->headers()->toArray();
         $options['query'] = $this->_options->parameters()->toArray();
-        $options['body'] = json_encode($this->_options->body()->toArray());
+        $options['body'] = $this->_options->body()->toJson();
         $response = $this->_client->request('POST', 'detect', $options);
-        dump($response->getBody()->getContents());
+        return $response;
     }
 }

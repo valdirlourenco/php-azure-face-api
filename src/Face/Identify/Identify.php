@@ -24,6 +24,6 @@ class Identify {
         $options['query'] = $this->_options->parameters()->toArray();
         $options['body'] = $this->_options->body()->toJson();
         $response = $this->_client->request('POST', 'identify', $options);
-        dump($response->getBody()->getContents());
+        return $response;
     }
 }

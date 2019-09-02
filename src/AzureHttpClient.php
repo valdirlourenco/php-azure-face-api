@@ -18,7 +18,7 @@ class AzureHttpClient {
     {
         $headers = &$options['headers'];
         $headers['Ocp-Apim-Subscription-Key'] = $this->_key;
-        dump($options);
+//        dump($options);
         return $this->_client->request($method, $uri, $options);
     }
 

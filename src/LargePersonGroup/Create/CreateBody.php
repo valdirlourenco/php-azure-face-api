@@ -41,4 +41,9 @@ class CreateBody {
         return $return;
     }
 
+    public function toJson()
+    {
+        return $this->toArray();
+    }
+
 }

@@ -28,6 +28,6 @@ class AddFace {
         $url = 'largepersongroups/'.$largePersonGroupId.'/persons/'.$personId.'/persistedfaces';
 //        ?userData][&targetFace][&detectionModel]
         $response = $this->_client->request('POST', $url, $options);
-        dump($response->getBody()->getContents());
+        return $response;
     }
 }

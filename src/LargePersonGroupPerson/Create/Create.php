@@ -25,6 +25,6 @@ class Create {
         $options['body'] = $this->_options->body()->toJson();
         $url = 'largepersongroups/'.$this->_options->parameters()->getLargePersonGroupId().'/persons';
         $response = $this->_client->request('POST', $url, $options);
-        dump($response->getBody()->getContents());
+        return $response;
     }
 }

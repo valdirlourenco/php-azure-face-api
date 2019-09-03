@@ -8,7 +8,7 @@ class Person {
 
     }
 
-    public function recognize($url)
+    public function recognize($url, $listId)
     {
 
     }

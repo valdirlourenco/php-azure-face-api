@@ -14,7 +14,7 @@ class AddFace {
         }
         $this->_options = $options;
         $this->_client = $client;
-        $this->execute();
+        return $this->execute();
     }
 
     public function execute()

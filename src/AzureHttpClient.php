@@ -4,9 +4,10 @@ namespace SmartDog23\AzureFaceApi;
 use GuzzleHttp\Client;
 
 class AzureHttpClient {
-    
+
     private $_client;
     private $_key;
+    private $_response;
 
     public function __construct($options, $key)
     {
@@ -18,7 +19,15 @@ class AzureHttpClient {
     {
         $headers = &$options['headers'];
         $headers['Ocp-Apim-Subscription-Key'] = $this->_key;
-        $this->_client->request($method, $uri, $options);
+        $this->_response = $this->_client->request($method, $uri, $options);
+        $responseBody = $this->_response->getBody();
+        dump($responseBody);
+//        return $this->_response;
+    }
+
+    public function getBody()
+    {
+        return $this->_response->getBody();
     }
 
 }

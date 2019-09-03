@@ -14,7 +14,7 @@ class Create {
         }
         $this->_options = $options;
         $this->_client = $client;
-        $this->execute();
+        return $this->execute();
     }
 
     public function execute()
@@ -25,6 +25,8 @@ class Create {
         $options['body'] = $this->_options->body()->toJson();
         $url = 'largepersongroups/'.$this->_options->parameters()->getLargePersonGroupId().'/persons';
         $response = $this->_client->request('POST', $url, $options);
+        $responseBody = $response->getBody();
+        dump($responseBody);
         return $response;
     }
 }

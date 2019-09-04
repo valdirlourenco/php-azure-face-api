@@ -14,7 +14,6 @@ class Train {
         }
         $this->_options = $options;
         $this->_client = $client;
-        $this->execute();
     }
 
     public function execute()

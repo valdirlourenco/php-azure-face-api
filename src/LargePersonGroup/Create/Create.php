@@ -17,7 +17,6 @@ class Create {
         }
         $this->_options = $options;
         $this->_client = $client;
-        $this->execute();
     }
 
     public function execute()
@@ -27,9 +26,7 @@ class Create {
         $options['query'] = $this->_options->parameters()->toArray();
         $options['body'] = $this->_options->body()->toJson();
         $url = 'largepersongroups/'.$this->_options->parameters()->getLargePersonGroupId();
-//        dump($options);
         $response = $this->_client->request('PUT', $url, $options);
-//        dd($response->getBody());
         return $response;
     }
 }

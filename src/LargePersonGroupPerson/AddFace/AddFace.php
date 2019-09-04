@@ -24,7 +24,11 @@ class AddFace {
         $options['query'] = $this->_options->parameters()->toArray();
         $options['body'] = $this->_options->body()->toJson();
         $largePersonGroupId = $this->_options->parameters()->getLargePersonGroupId();
+//        dump('00001');
+//        dump($largePersonGroupId);
         $personId = $this->_options->parameters()->getPersonId();
+        dump('00002');
+        dd($personId);
         $url = 'largepersongroups/'.$largePersonGroupId.'/persons/'.$personId.'/persistedfaces';
 //        ?userData][&targetFace][&detectionModel]
         $response = $this->_client->request('POST', $url, $options);

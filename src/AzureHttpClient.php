@@ -2,6 +2,7 @@
 
 namespace SmartDog23\AzureFaceApi;
 use GuzzleHttp\Client;
+use GuzzleHttp;
 
 class AzureHttpClient {
 
@@ -17,12 +18,34 @@ class AzureHttpClient {
 
     public function request($method, $uri, $options)
     {
-        $headers = &$options['headers'];
-        $headers['Ocp-Apim-Subscription-Key'] = $this->_key;
-        $this->_response = $this->_client->request($method, $uri, $options);
-        $responseBody = $this->_response->getBody();
-        dump($responseBody);
-//        return $this->_response;
+        echo 'azure request';
+        try {
+            $headers = &$options['headers'];
+            $headers['Ocp-Apim-Subscription-Key'] = $this->_key;
+            dump($uri);
+            $this->_response = $this->_client->request($method, $uri, $options);
+            $responseBody = $this->_response->getBody();
+            dump('aqui 002');
+            dump($this->_response);
+            dump($this->_response->getStatusCode());
+            dump($responseBody);
+        } catch (GuzzleHttp\Exception\ClientException $e) {
+            $response = $e->getResponse();
+            $responseBody = $response->getStatusCode();
+            $responseBodyAsString = $response->getBody()->getContents();
+//            dump('end error 1');
+//            dump($responseBody);
+//            dump('end error 2');
+//            dump($responseBodyAsString);
+//            dump('end error');
+        } catch (RequestException $e) {
+            echo Psr7\str($e->getRequest());
+            if ($e->hasResponse()) {
+                echo Psr7\str($e->getResponse());
+            }
+        }
+
+        return $this->_response->getBody();
     }
 
     public function getBody()

@@ -19,14 +19,20 @@ class Create {
 
     public function execute()
     {
+        echo 'create the person';
         $options = [];
         $options['headers'] = $this->_options->headers()->toArray();
         $options['query'] = $this->_options->parameters()->toArray();
         $options['body'] = $this->_options->body()->toJson();
         $url = 'largepersongroups/'.$this->_options->parameters()->getLargePersonGroupId().'/persons';
+        dump($this->_client);
         $response = $this->_client->request('POST', $url, $options);
-        $responseBody = $response->getBody();
-        dump($responseBody);
+        echo 'a1';
+        dump($options);
+        dump(json_decode($response->getContents(), true));
+//        dump(json_decode($response->getContents(), true));
+        echo 'a2';
+//        $responseBody = $response->getBody();
         return $response;
     }
 }

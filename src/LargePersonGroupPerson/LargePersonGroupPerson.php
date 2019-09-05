@@ -16,8 +16,13 @@ class LargePersonGroupPerson {
 
     public function addFace($options = null)
     {
-        $addFace = new AddFace($this->_client, $options);
-        return $addFace->execute();
+//        $addFace = new AddFace($this->_client, $options);
+//        return $addFace->execute();
+        $addFace = new AddFace($this->_client);
+        if($options == null) {
+            return $addFace;
+        }
+        return $addFace->call($options);
     }
 
     public function create($options = null)

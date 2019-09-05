@@ -3,9 +3,11 @@
 namespace SmartDog23\AzureFaceApi\LargePersonGroupPerson\Create;
 
 use GuzzleHttp\Psr7\Response;
+use SmartDog23\AzureFaceApi\AzureHttpClient;
 
 class Create {
 
+    /** @var AzureHttpClient $_client */
     private $_client;
     private $_options;
 
@@ -26,10 +28,6 @@ class Create {
         $options['body'] = $this->_options->body()->toJson();
         $url = 'largepersongroups/'.$this->_options->parameters()->getLargePersonGroupId().'/persons';
         $response = $this->_client->request('POST', $url, $options);
-        if($response instanceof Response) {
-            return json_decode($response->getBody()->getContents(), true);
-        } else {
-            return null;
-        }
+        return $response;
     }
 }

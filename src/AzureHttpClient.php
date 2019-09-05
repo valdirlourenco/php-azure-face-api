@@ -2,10 +2,11 @@
 
 namespace SmartDog23\AzureFaceApi;
 use GuzzleHttp\Client;
-use GuzzleHttp;
-use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ConnectException;
-use GuzzleHttp\Psr7;
+use GuzzleHttp\Exception\RequestException;
+
+//use GuzzleHttp\Psr7;
 
 class AzureHttpClient {
 
@@ -26,24 +27,30 @@ class AzureHttpClient {
             $headers['Ocp-Apim-Subscription-Key'] = $this->_key;
             dump($uri);
             $response = $this->_client->request($method, $uri, $options);
-        } catch (GuzzleHttp\Exception\ClientException $e) {
-            $response = $e->getResponse();
+        } catch (ClientException $e) {
+//            $response = $e->getResponse();
+            $response = $e;
         } catch(ConnectException $e) {
             echo $e->getMessage();
-            $response = 'ConnectException';
+            //$response = 'ConnectException';
+//            $response = $e->getResponse();
+            $response = $e;
         } catch (RequestException $e) {
-            echo Psr7\str($e->getRequest());
-            if ($e->hasResponse()) {
-                echo Psr7\str($e->getResponse());
-            }
-            $response = 'RequestException';
+//            echo Psr7\str($e->getRequest());
+//            if ($e->hasResponse()) {
+//                echo Psr7\str($e->getResponse());
+//            }
+//            $response = 'RequestException';
+            $response = $e->getResponse();
         }
-        return $response;
+        dump($response);
+        $azureResponse = new AzureResponse($response);
+        return $azureResponse;
     }
 
-    public function getBody()
-    {
-        return $this->_response->getBody();
-    }
+//    public function getBody()
+//    {
+//        return $this->_response->getBody();
+//    }
 
 }

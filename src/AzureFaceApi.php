@@ -25,7 +25,6 @@ class AzureFaceApi {
     {
         $this->_key = $key;
         $this->_baseUri = AzureRegions::getApiBaseUrl($region);
-        //$this->_client = new Client(['base_uri' => $this->_baseUri]);
         $this->_client = new AzureHttpClient(['base_uri' => $this->_baseUri], $key);
     }
 

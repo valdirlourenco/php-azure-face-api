@@ -6,8 +6,6 @@ use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
 
-//use GuzzleHttp\Psr7;
-
 class AzureHttpClient {
 
     private $_client;
@@ -28,29 +26,14 @@ class AzureHttpClient {
             dump($uri);
             $response = $this->_client->request($method, $uri, $options);
         } catch (ClientException $e) {
-//            $response = $e->getResponse();
             $response = $e;
         } catch(ConnectException $e) {
             echo $e->getMessage();
-            //$response = 'ConnectException';
-//            $response = $e->getResponse();
             $response = $e;
         } catch (RequestException $e) {
-//            echo Psr7\str($e->getRequest());
-//            if ($e->hasResponse()) {
-//                echo Psr7\str($e->getResponse());
-//            }
-//            $response = 'RequestException';
             $response = $e->getResponse();
         }
-        dump($response);
         $azureResponse = new AzureResponse($response);
         return $azureResponse;
     }
-
-//    public function getBody()
-//    {
-//        return $this->_response->getBody();
-//    }
-
 }

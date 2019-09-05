@@ -51,5 +51,4 @@ class AzureFaceApi {
         }
         return $this->_largePersonGroupPerson;
     }
-
 }

@@ -35,5 +35,4 @@ class CreateOptions {
         }
         return $this->_body;
    }
-
 }

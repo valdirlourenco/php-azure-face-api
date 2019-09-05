@@ -13,21 +13,36 @@ class Create {
 
     public function __construct($client, $options = null)
     {
+//        if(is_null($options)) {
+//            $options = new CreateOptions();
+//        }
+//        $this->_options = $options;
+        $this->_client = $client;
+    }
+
+    public function call($options = null)
+    {
         if(is_null($options)) {
             $options = new CreateOptions();
         }
         $this->_options = $options;
-        $this->_client = $client;
+//        $this->_client = $client;
+
+        $optionsRequest = [];
+        $optionsRequest['headers'] = $this->_options->headers()->toArray();
+        $optionsRequest['query'] = $this->_options->parameters()->toArray();
+        $optionsRequest['body'] = $this->_options->body()->toJson();
+        $url = 'largepersongroups/'.$this->_options->parameters()->getLargePersonGroupId().'/persons';
+        $response = $this->_client->request('POST', $url, $optionsRequest);
+        return $response;
     }
 
-    public function execute()
+    public function execute($groupId, $name, $userData)
     {
-        $options = [];
-        $options['headers'] = $this->_options->headers()->toArray();
-        $options['query'] = $this->_options->parameters()->toArray();
-        $options['body'] = $this->_options->body()->toJson();
-        $url = 'largepersongroups/'.$this->_options->parameters()->getLargePersonGroupId().'/persons';
-        $response = $this->_client->request('POST', $url, $options);
-        return $response;
+        $options = new CreateOptions();
+        $options->parameters()->largePersonGroupId($groupId);
+        $options->body()->name($name);
+        $options->body()->userData($userData);
+        return $this->call($options);
     }
 }

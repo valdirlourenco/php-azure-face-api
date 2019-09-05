@@ -22,9 +22,11 @@ class LargePersonGroupPerson {
 
     public function create($options = null)
     {
-        $create = new Create($this->_client, $options);
-        return $create->execute();
-
+        $create = new Create($this->_client);
+        if($options == null) {
+            return $create;
+        }
+        return $create->call($options);
     }
 
     public function delete()

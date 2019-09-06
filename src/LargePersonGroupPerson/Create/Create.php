@@ -13,10 +13,6 @@ class Create {
 
     public function __construct($client, $options = null)
     {
-//        if(is_null($options)) {
-//            $options = new CreateOptions();
-//        }
-//        $this->_options = $options;
         $this->_client = $client;
     }
 
@@ -26,7 +22,6 @@ class Create {
             $options = new CreateOptions();
         }
         $this->_options = $options;
-//        $this->_client = $client;
 
         $optionsRequest = [];
         $optionsRequest['headers'] = $this->_options->headers()->toArray();

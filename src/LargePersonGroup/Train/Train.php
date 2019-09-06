@@ -7,17 +7,19 @@ class Train {
     private $_client;
     private $_options;
 
-    public function __construct($client, $options = null)
+    public function __construct($client)
     {
+        $this->_client = $client;
+    }
+
+    public function call($options = null)
+    {
+
         if(is_null($options)) {
             $options = new TrainOptions();
         }
         $this->_options = $options;
-        $this->_client = $client;
-    }
 
-    public function execute()
-    {
         $options = [];
         $options['headers'] = $this->_options->headers()->toArray();
         $options['query'] = $this->_options->parameters()->toArray();
@@ -25,5 +27,12 @@ class Train {
         $url = 'largepersongroups/'.$this->_options->parameters()->getLargePersonGroupId().'/train';
         $response = $this->_client->request('POST', $url, $options);
         return $response;
+    }
+
+    public function execute($largePersonGroupId)
+    {
+        $options = new TrainOptions();
+        $options->parameters()->largePersonGroupId($largePersonGroupId);
+        return $this->call($options);
     }
 }

@@ -45,8 +45,11 @@ class LargePersonGroup {
 
     public function train($options = null)
     {
-        $train = new Train($this->_client, $options);
-        return $train->execute();
+        $train = new Train($this->_client);
+        if($options == null) {
+            return $train;
+        }
+        return $train->call($options);
     }
 
     public function update()

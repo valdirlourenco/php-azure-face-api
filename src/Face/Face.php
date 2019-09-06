@@ -16,7 +16,11 @@ class Face {
 
     public function detect($options = null)
     {
-        new Detect($this->_client, $options);
+        $detect = new Detect($this->_client);
+        if($options == null) {
+            return $detect;
+        }
+        return $detect->call($options);
         
     }
 
@@ -32,7 +36,11 @@ class Face {
 
     public function identify($options = null)
     {
-        new Identify($this->_client, $options);
+        $identify = new Identify($this->_client);
+        if($options == null) {
+            return $identify;
+        }
+        return $identify->call($options);
     }
 
     public function verify()

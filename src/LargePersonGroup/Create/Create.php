@@ -12,10 +12,6 @@ class Create {
 
     public function __construct($client)
     {
-//        if(is_null($options)) {
-//            $options = new CreateOptions();
-//        }
-//        $this->_options = $options;
         $this->_client = $client;
     }
 

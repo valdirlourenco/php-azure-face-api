@@ -8,6 +8,6 @@ class DetectHeaders extends AzureFaceApiHeaders {
 
     public function __construct()
     {
-        $this->contentType(parent::CONTENT_TYPE_JSON);
+        parent::__construct();
     }
 }

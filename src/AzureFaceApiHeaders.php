@@ -10,6 +10,11 @@ class AzureFaceApiHeaders {
 
     const CONTENT_TYPE_JSON = 'application/json';
 
+    protected function __construct()
+    {
+        $this->contentType(self::CONTENT_TYPE_JSON);
+    }
+
     public function contentType($value)
     {
         $this->_contentType = $value;

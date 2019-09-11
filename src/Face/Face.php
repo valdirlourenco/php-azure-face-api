@@ -20,7 +20,7 @@ class Face {
         if($options == null) {
             return $detect;
         }
-        return $detect->call($options);
+        return $detect->executeWithOptions($options);
         
     }
 
@@ -40,7 +40,7 @@ class Face {
         if($options == null) {
             return $identify;
         }
-        return $identify->call($options);
+        return $identify->executeWithOptions($options);
     }
 
     public function verify()

@@ -20,7 +20,7 @@ class LargePersonGroup {
         if($options == null) {
             return $create;
         }
-        return $create->call($options);
+        return $create->executeWithOptions($options);
     }
 
     public function delete()
@@ -49,7 +49,7 @@ class LargePersonGroup {
         if($options == null) {
             return $train;
         }
-        return $train->call($options);
+        return $train->executeWithOptions($options);
     }
 
     public function update()

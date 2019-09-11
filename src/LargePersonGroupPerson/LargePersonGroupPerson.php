@@ -21,7 +21,7 @@ class LargePersonGroupPerson {
         if($options == null) {
             return $addFace;
         }
-        return $addFace->call($options);
+        return $addFace->executeWithOptions($options);
     }
 
     public function create($options = null)
@@ -30,7 +30,7 @@ class LargePersonGroupPerson {
         if($options == null) {
             return $create;
         }
-        return $create->call($options);
+        return $create->executeWithOptions($options);
     }
 
     public function delete()
@@ -49,7 +49,7 @@ class LargePersonGroupPerson {
         if($options == null) {
             return $get;
         }
-        return $get->call($options);
+        return $get->executeWithOptions($options);
     }
 
     public function getFace()

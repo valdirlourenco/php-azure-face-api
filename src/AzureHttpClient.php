@@ -22,6 +22,7 @@ class AzureHttpClient {
     {
         try {
             $headers = &$options['headers'];
+            $headers['User-Agent'] = 'SmartDog23 - PHP Azure Face API (https://github.com/smartdog23/php-azure-face-api)';
             $headers['Ocp-Apim-Subscription-Key'] = $this->_key;
             dump($uri);
             $response = $this->_client->request($method, $uri, $options);

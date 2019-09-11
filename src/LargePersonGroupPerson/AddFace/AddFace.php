@@ -12,7 +12,7 @@ class AddFace {
         $this->_client = $client;
     }
 
-    public function call($options = null)
+    public function executeWithOptions($options = null)
     {
         if(is_null($options)) {
             $options = new AddFaceOptions();
@@ -37,6 +37,6 @@ class AddFace {
         $options->parameters()->personId($personId);
         $options->parameters()->userData($userData);
         $options->body()->url($imageUrl);
-        return $this->call($options);
+        return $this->executeWithOptions($options);
     }
 }

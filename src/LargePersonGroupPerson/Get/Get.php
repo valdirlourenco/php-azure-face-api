@@ -12,7 +12,7 @@ class Get {
         $this->_client = $client;
     }
 
-    public function call($options = null)
+    public function executeWithOptions($options = null)
     {
         if(is_null($options)) {
             $options = new GetOptions();
@@ -35,6 +35,6 @@ class Get {
         $options = new GetOptions();
         $options->parameters()->largePersonGroupId($groupId);
         $options->parameters()->personId($personId);
-        return $this->call($options);
+        return $this->executeWithOptions($options);
     }
 }

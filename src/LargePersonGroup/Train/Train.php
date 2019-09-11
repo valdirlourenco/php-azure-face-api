@@ -12,7 +12,7 @@ class Train {
         $this->_client = $client;
     }
 
-    public function call($options = null)
+    public function executeWithOptions($options = null)
     {
 
         if(is_null($options)) {
@@ -33,6 +33,6 @@ class Train {
     {
         $options = new TrainOptions();
         $options->parameters()->largePersonGroupId($largePersonGroupId);
-        return $this->call($options);
+        return $this->executeWithOptions($options);
     }
 }

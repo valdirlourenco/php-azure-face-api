@@ -15,7 +15,7 @@ class Detect
         $this->_client = $client;
     }
 
-    public function call($options = null)
+    public function executeWithOptions($options = null)
     {
         if (is_null($options)) {
             $options = new DetectOptions();
@@ -40,6 +40,6 @@ class Detect
         $options->parameters()->returnRecognitionModel($returnRecognitionModel);
         $options->parameters()->detectionModel($detectionModel);
         $options->body()->url($url);
-        return $this->call($options);
+        return $this->executeWithOptions($options);
     }
 }

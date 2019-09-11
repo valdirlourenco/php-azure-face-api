@@ -15,7 +15,7 @@ class Create {
         $this->_client = $client;
     }
 
-    public function call($options = null)
+    public function executeWithOptions($options = null)
     {
         if(is_null($options)) {
             $options = new CreateOptions();
@@ -37,7 +37,7 @@ class Create {
         $options->parameters()->largePersonGroupId($groupId);
         $options->body()->name($description);
         $options->body()->userData($userData);
-        return $this->call($options);
+        return $this->executeWithOptions($options);
     }
 
 }

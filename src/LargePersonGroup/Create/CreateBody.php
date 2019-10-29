@@ -2,7 +2,7 @@
 
 namespace SmartDog23\AzureFaceApi\LargePersonGroup\Create;
 
-use SmartDog23\AzureFaceApi\Utilities\AzureFaceApi;
+use SmartDog23\AzureFaceApi\AzureFaceApi;
 
 class CreateBody {
 

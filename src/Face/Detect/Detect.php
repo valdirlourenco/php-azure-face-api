@@ -1,8 +1,8 @@
-<?php 
+<?php
 
 namespace SmartDog23\AzureFaceApi\Face\Detect;
 
-use SmartDog23\AzureFaceApi\AzureFaceApi;
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApi;
 
 class Detect
 {

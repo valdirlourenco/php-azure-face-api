@@ -2,7 +2,7 @@
 
 namespace SmartDog23\AzureFaceApi\LargePersonGroupPerson\AddFace;
 
-use SmartDog23\AzureFaceApi\AzureFaceApi;
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApi;
 
 class AddFaceParameters {
 

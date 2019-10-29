@@ -2,7 +2,7 @@
 
 namespace SmartDog23\AzureFaceApi\LargePersonGroupPerson\AddFace;
 
-use SmartDog23\AzureFaceApi\AzureFaceApiHeaders;
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiHeaders;
 
 class AddFaceHeaders extends AzureFaceApiHeaders {
 

@@ -1,6 +1,7 @@
 <?php
 
-namespace SmartDog23\AzureFaceApi;
+namespace SmartDog23\AzureFaceApi\Utilities;
+
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ConnectException;

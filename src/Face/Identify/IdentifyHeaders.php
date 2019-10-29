@@ -2,7 +2,8 @@
 
 namespace SmartDog23\AzureFaceApi\Face\Identify;
 
-use SmartDog23\AzureFaceApi\AzureFaceApiHeaders;
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiHeaders;
+
 
 class IdentifyHeaders extends AzureFaceApiHeaders {
 

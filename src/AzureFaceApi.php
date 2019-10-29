@@ -5,6 +5,7 @@ namespace SmartDog23\AzureFaceApi;
 use SmartDog23\AzureFaceApi\Face\Face;
 use SmartDog23\AzureFaceApi\LargePersonGroup\LargePersonGroup;
 use SmartDog23\AzureFaceApi\LargePersonGroupPerson\LargePersonGroupPerson;
+use SmartDog23\AzureFaceApi\Utilities\AzureHttpClient;
 
 class AzureFaceApi {
 
@@ -21,7 +22,7 @@ class AzureFaceApi {
     private $_largePersonGroup;
     private $_largePersonGroupPerson;
 
-    public function __construct($key, $region) 
+    public function __construct($key, $region)
     {
         $this->_key = $key;
         $this->_baseUri = AzureRegions::getApiBaseUrl($region);

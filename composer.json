@@ -7,7 +7,7 @@
         "face api",
         "facial",
         "recognition",
-        "detection",
+        "detection"
     ],
     "homepage": "https://github.com/smartdog23/php-azure-face-api",
     "require": {

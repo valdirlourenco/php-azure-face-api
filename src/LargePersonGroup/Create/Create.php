@@ -31,7 +31,7 @@ class Create {
         return $response;
     }
 
-    public function execute($groupId, $description, $userData)
+    public function execute($groupId, $description, $userData = null)
     {
         $options = new CreateOptions();
         $options->parameters()->largePersonGroupId($groupId);

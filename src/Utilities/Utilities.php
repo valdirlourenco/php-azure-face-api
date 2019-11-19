@@ -1,5 +1,5 @@
 <?php
-namespace SmartDog23\Utilities;
+namespace SmartDog23\AzureFaceApi\Utilities;
 
 class Utilities {
 

@@ -2,7 +2,7 @@
 
 namespace SmartDog23\AzureFaceApi\Face\Detect;
 
-use SmartDog23\AzureFaceApi\AzureFaceApiHeaders;
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiHeaders;
 
 class DetectHeaders extends AzureFaceApiHeaders {
 

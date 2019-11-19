@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace SmartDog23\AzureFaceApi\Face\Detect;
 

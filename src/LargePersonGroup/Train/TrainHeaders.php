@@ -2,7 +2,7 @@
 
 namespace SmartDog23\AzureFaceApi\LargePersonGroup\Train;
 
-use SmartDog23\AzureFaceApi\AzureFaceApiHeaders;
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiHeaders;
 
 class TrainHeaders extends AzureFaceApiHeaders {
 

@@ -16,11 +16,7 @@ class LargePersonGroup {
 
     public function create($options = null)
     {
-        $create = new Create($this->_client);
-        if($options == null) {
-            return $create;
-        }
-        return $create->executeWithOptions($options);
+        return new Create($this->_client);
     }
 
     public function delete()
@@ -45,16 +41,11 @@ class LargePersonGroup {
 
     public function train($options = null)
     {
-        $train = new Train($this->_client);
-        if($options == null) {
-            return $train;
-        }
-        return $train->executeWithOptions($options);
+        return new Train($this->_client);
     }
 
     public function update()
     {
 
     }
-
 }

@@ -17,20 +17,12 @@ class LargePersonGroupPerson {
 
     public function addFace($options = null)
     {
-        $addFace = new AddFace($this->_client);
-        if($options == null) {
-            return $addFace;
-        }
-        return $addFace->executeWithOptions($options);
+        return new AddFace($this->_client);
     }
 
     public function create($options = null)
     {
-        $create = new Create($this->_client);
-        if($options == null) {
-            return $create;
-        }
-        return $create->executeWithOptions($options);
+        return new Create($this->_client);
     }
 
     public function delete()
@@ -45,11 +37,7 @@ class LargePersonGroupPerson {
 
     public function get($options = null)
     {
-        $get = new Get($this->_client);
-        if($options == null) {
-            return $get;
-        }
-        return $get->executeWithOptions($options);
+        return new Get($this->_client);
     }
 
     public function getFace()
@@ -57,10 +45,7 @@ class LargePersonGroupPerson {
 
     }
 
-    /**
-     * this is the list method but 'list' is a reserved word in PHP
-     */
-    public function listPerson()
+    public function list()
     {
 
     }

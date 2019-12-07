@@ -16,36 +16,27 @@ class Face {
 
     public function detect($options = null)
     {
-        $detect = new Detect($this->_client);
-        if($options == null) {
-            return $detect;
-        }
-        return $detect->executeWithOptions($options);
-        
+        return new Detect($this->_client);
     }
 
     public function findSimilar()
     {
-        
+
     }
 
     public function group()
     {
-        
+
     }
 
     public function identify($options = null)
     {
-        $identify = new Identify($this->_client);
-        if($options == null) {
-            return $identify;
-        }
-        return $identify->executeWithOptions($options);
+        return new Identify($this->_client);
     }
 
     public function verify()
     {
-        
+
     }
 
 }

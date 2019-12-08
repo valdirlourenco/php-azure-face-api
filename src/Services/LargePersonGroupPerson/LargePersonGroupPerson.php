@@ -6,6 +6,7 @@ use SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\AddFace\AddFace;
 use SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\Create\Create;
 use SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\Get\Get;
 use SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\Delete\Delete;
+use SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\DeleteFace\DeleteFace;
 
 class LargePersonGroupPerson {
 
@@ -33,7 +34,7 @@ class LargePersonGroupPerson {
 
     public function deleteFace()
     {
-
+        return new DeleteFace($this->_client);
     }
 
     public function get($options = null)

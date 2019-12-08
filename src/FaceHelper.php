@@ -3,9 +3,9 @@
 namespace SmartDog23\AzureFaceApi;
 
 use SmartDog23\AzureFaceApi\AzureFaceApi;
-use SmartDog23\AzureFaceApi\LargePersonGroup\Create\CreateOptions;
-use SmartDog23\AzureFaceApi\LargePersonGroup\Train\TrainOptions;
-use SmartDog23\AzureFaceApi\LargePersonGroupPerson\AddFace\AddFaceOptions;
+use SmartDog23\AzureFaceApi\Services\LargePersonGroup\Create\CreateOptions;
+use SmartDog23\AzureFaceApi\Services\LargePersonGroup\Train\TrainOptions;
+use SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\AddFace\AddFaceOptions;
 
 class FaceHelper {
 
@@ -30,7 +30,7 @@ class FaceHelper {
 
     public function createLargePersonGroupPerson($groupId)
     {
-        $options = new \SmartDog23\AzureFaceApi\LargePersonGroupPerson\Create\CreateOptions();
+        $options = new \SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\Create\CreateOptions();
         $options->parameters()->largePersonGroupId($groupId);
         $name = 'name '.rand(1000, 9999);
         $options->body()->name($name);

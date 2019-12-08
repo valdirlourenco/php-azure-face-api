@@ -2,9 +2,9 @@
 
 namespace SmartDog23\AzureFaceApi;
 
-use SmartDog23\AzureFaceApi\Face\Face;
-use SmartDog23\AzureFaceApi\LargePersonGroup\LargePersonGroup;
-use SmartDog23\AzureFaceApi\LargePersonGroupPerson\LargePersonGroupPerson;
+use SmartDog23\AzureFaceApi\Services\Face\Face;
+use SmartDog23\AzureFaceApi\Services\LargePersonGroup\LargePersonGroup;
+use SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\LargePersonGroupPerson;
 use SmartDog23\AzureFaceApi\Utilities\AzureHttpClient;
 
 class AzureFaceApi {

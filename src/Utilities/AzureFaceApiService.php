@@ -2,7 +2,7 @@
 
 namespace SmartDog23\AzureFaceApi\Utilities;
 
-class Service
+class AzureFaceApiService
 {
     protected $_client;
 

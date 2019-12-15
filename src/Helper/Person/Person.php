@@ -1,5 +1,5 @@
 <?php
-namespace SmartDog23\AzureFaceApi\Person;
+namespace SmartDog23\AzureFaceApi\Helper\Person;
 
 class Person {
 

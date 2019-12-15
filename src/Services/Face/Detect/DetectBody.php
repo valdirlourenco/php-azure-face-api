@@ -2,29 +2,20 @@
 
 namespace SmartDog23\AzureFaceApi\Services\Face\Detect;
 
-class DetectBody {
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiBody;
 
+class DetectBody extends AzureFaceApiBody
+{
     private $_url;
 
     public function __construct()
     {
+        parent::construct();
+        $this->castArray = ['url'];
     }
 
     public function url($value)
     {
         $this->_url = $value;
     }
-
-    public function toArray()
-    {
-        $return = [];
-        $return['url'] = $this->_url;
-        return $return;
-    }
-
-    public function toJson()
-    {
-        return json_encode($this->toArray());
-    }
-
 }

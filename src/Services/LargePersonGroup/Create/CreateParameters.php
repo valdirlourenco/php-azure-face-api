@@ -2,8 +2,10 @@
 
 namespace SmartDog23\AzureFaceApi\Services\LargePersonGroup\Create;
 
-class CreateParameters {
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiParameters;
 
+class CreateParameters extends AzureFaceApiParameters
+{
     private $_largePersonGroupId;
 
     public function __construct()
@@ -20,14 +22,4 @@ class CreateParameters {
     {
         return $this->_largePersonGroupId;
     }
-
-    public function toArray()
-    {
-        $return = [];
-        $return['largePersonGroupId'] = $this->_largePersonGroupId;
-        return $return;
-    }
-
-
-
 }

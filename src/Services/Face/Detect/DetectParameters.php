@@ -3,8 +3,11 @@
 namespace SmartDog23\AzureFaceApi\Services\Face\Detect;
 
 use SmartDog23\AzureFaceApi\AzureFaceApi;
+use SmartDog23\AzureFaceApi\Utilities\Traits\CastTrait;
 
 class DetectParameters {
+
+    use CastTrait;
 
     private $_returnFaceId;
     private $_returnFaceLandmarks;
@@ -37,6 +40,7 @@ class DetectParameters {
         $this->_recognitionModel = AzureFaceApi::RECOGNITION_02;
         $this->_returnRecognitionModel = 'false';
         $this->_detectionModel = AzureFaceApi::DETECTION_02;
+        $this->castArray = ['returnFaceId', 'returnFaceLandmarks', 'returnFaceAttributes', 'recognitionModel', 'returnRecognitionModel', 'detectionModel'];
     }
 
     public function returnFaceId($value)
@@ -71,19 +75,4 @@ class DetectParameters {
     {
         $this->_detectionModel = $value;
     }
-
-    public function toArray()
-    {
-        $return = [];
-        $return['returnFaceId'] = $this->_returnFaceId;
-        $return['returnFaceLandmarks'] = $this->_returnFaceLandmarks;
-        $return['returnFaceAttributes'] = $this->_returnFaceAttributes;
-        $return['recognitionModel'] = $this->_recognitionModel;
-        $return['returnRecognitionModel'] = $this->_returnRecognitionModel;
-        $return['detectionModel'] = $this->_detectionModel;
-        return $return;
-    }
-
-
-
 }

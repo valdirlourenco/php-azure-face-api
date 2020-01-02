@@ -3,9 +3,9 @@
 namespace SmartDog23\AzureFaceApi\Services\Face\Detect;
 
 use SmartDog23\AzureFaceApi\AzureFaceApi;
-use SmartDog23\AzureFaceApi\Utilities\Service;
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiService;
 
-class Detect extends Service
+class Detect extends AzureFaceApiService
 {
     public function __construct($client)
     {

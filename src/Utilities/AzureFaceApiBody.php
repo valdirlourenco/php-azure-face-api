@@ -2,27 +2,13 @@
 
 namespace SmartDog23\AzureFaceApi\Utilities;
 
+use SmartDog23\AzureFaceApi\Utilities\Traits\CastTrait;
+
 class AzureFaceApiBody
 {
-    protected $castArray;
+    use CastTrait;
 
     public function __construct()
     {
-    }
-
-    public function toArray()
-    {
-        $return = [];
-        foreach ($this->castArray as $item)
-        {
-            $itemName = '_'.$item;
-            $return[$item] = $this->$itemName;
-        }
-        return $return;
-    }
-
-    public function toJson()
-    {
-        return json_encode($this->toArray());
     }
 }

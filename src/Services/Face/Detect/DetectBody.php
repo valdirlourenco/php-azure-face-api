@@ -10,7 +10,7 @@ class DetectBody extends AzureFaceApiBody
 
     public function __construct()
     {
-        parent::construct();
+        parent::__construct();
         $this->castArray = ['url'];
     }
 

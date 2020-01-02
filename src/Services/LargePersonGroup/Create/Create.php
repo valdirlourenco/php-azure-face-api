@@ -2,22 +2,20 @@
 
 namespace SmartDog23\AzureFaceApi\Services\LargePersonGroup\Create;
 
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiService;
 use SmartDog23\AzureFaceApi\Utilities\AzureHttpClient;
 
-class Create {
-
-    /** @var AzureHttpClient */
-    private $_client;
-    private $_options;
+class Create extends AzureFaceApiService
+{
 
     public function __construct($client)
     {
-        $this->_client = $client;
+        parent::__construct($client);
     }
 
     public function executeWithOptions($options = null)
     {
-        if(is_null($options)) {
+        if (is_null($options)) {
             $options = new CreateOptions();
         }
         $this->_options = $options;
@@ -26,7 +24,7 @@ class Create {
         $optionsRequest['headers'] = $this->_options->headers()->toArray();
         $optionsRequest['query'] = $this->_options->parameters()->toArray();
         $optionsRequest['body'] = $this->_options->body()->toJson();
-        $url = 'largepersongroups/'.$this->_options->parameters()->getLargePersonGroupId();
+        $url = 'largepersongroups/' . $this->_options->parameters()->getLargePersonGroupId();
         $response = $this->_client->request('PUT', $url, $optionsRequest);
         return $response;
     }

@@ -17,7 +17,7 @@ class AzureFaceApiService
         $this->_client = $client;
     }
 
-    protected function executeWithOptionsCall($options, $url, $method)
+    protected function _executeWithOptionsCall($options, $url, $method)
     {
 //        if (is_null($options)) {
 //            $options = new $this->_optionsClass;

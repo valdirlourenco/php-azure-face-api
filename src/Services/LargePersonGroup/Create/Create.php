@@ -3,7 +3,6 @@
 namespace SmartDog23\AzureFaceApi\Services\LargePersonGroup\Create;
 
 use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiService;
-use SmartDog23\AzureFaceApi\Utilities\AzureHttpClient;
 
 class Create extends AzureFaceApiService
 {

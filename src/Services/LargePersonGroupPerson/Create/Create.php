@@ -2,34 +2,22 @@
 
 namespace SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\Create;
 
-use GuzzleHttp\Psr7\Response;
-use SmartDog23\AzureFaceApi\Utilities\AzureHttpClient;
+use SmartDog23\AzureFaceApi\Services\LargePersonGroup\Create\CreateOptions;
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiService;
 
-class Create {
-
-    /** @var AzureHttpClient $_client */
-    private $_client;
-    private $_options;
-
-    public function __construct($client, $options = null)
+class Create extends AzureFaceApiService
+{
+    public function __construct($client)
     {
-        $this->_client = $client;
+        parent::__construct($client);
+        $this->_optionsClass = CreateOptions::class;
     }
 
     public function executeWithOptions($options = null)
     {
-        if(is_null($options)) {
-            $options = new CreateOptions();
-        }
-        $this->_options = $options;
 
-        $optionsRequest = [];
-        $optionsRequest['headers'] = $this->_options->headers()->toArray();
-        $optionsRequest['query'] = $this->_options->parameters()->toArray();
-        $optionsRequest['body'] = $this->_options->body()->toJson();
-        $url = 'largepersongroups/'.$this->_options->parameters()->getLargePersonGroupId().'/persons';
-        $response = $this->_client->request('POST', $url, $optionsRequest);
-        return $response;
+        $url = 'largepersongroups/' . $options->parameters()->getLargePersonGroupId() . '/persons';
+        return $this->_executeWithOptionsCall($options, $url, 'POST');
     }
 
     public function execute($groupId, $name, $userData = null)

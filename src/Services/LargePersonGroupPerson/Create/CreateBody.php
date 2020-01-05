@@ -2,8 +2,10 @@
 
 namespace SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\Create;
 
-class CreateBody {
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiBody;
 
+class CreateBody extends AzureFaceApiBody
+{
     private $_name;
     private $_userData;
 
@@ -11,6 +13,7 @@ class CreateBody {
     {
         $this->_name = '';
         $this->_userData = '';
+        $this->castArray = ['name', 'userData'];
     }
 
     public function name($value)
@@ -22,18 +25,4 @@ class CreateBody {
     {
         $this->_userData = $value;
     }
-
-    public function toArray()
-    {
-        $return = [];
-        $return['name'] = $this->_name;
-        $return['userData'] = $this->_userData;
-        return $return;
-    }
-
-    public function toJson()
-    {
-        return json_encode($this->toArray());
-    }
-
 }

@@ -2,21 +2,12 @@
 
 namespace SmartDog23\AzureFaceApi\Services\LargePersonGroup\Train;
 
-class TrainBody {
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiBody;
 
+class TrainBody extends AzureFaceApiBody
+{
     public function __construct()
     {
+        $this->castArray = [];
     }
-
-    public function toArray()
-    {
-        $return = [];
-        return $return;
-    }
-
-    public function toJson()
-    {
-        return json_encode($this->toArray());
-    }
-
 }

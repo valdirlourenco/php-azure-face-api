@@ -2,38 +2,14 @@
 
 namespace SmartDog23\AzureFaceApi\Services\LargePersonGroup\Train;
 
-class TrainOptions {
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiOptions;
 
-    private $_parameters;
-    private $_headers;
-    private $_body;
-
+class TrainOptions extends AzureFaceApiOptions
+{
     public function __construct()
     {
+        $this->_parametersClass = TrainParameters::class;
+        $this->_headersClass = TrainHeaders::class;
+        $this->_bodyClass = TrainBody::class;
     }
-
-   public function parameters()
-   {
-        if($this->_parameters == null) {
-            $this->_parameters = new TrainParameters;
-        }
-        return $this->_parameters;
-   }
-
-   public function headers()
-   {
-        if($this->_headers == null) {
-            $this->_headers = new TrainHeaders;
-        }
-        return $this->_headers;
-   }
-
-   public function body()
-   {
-        if($this->_body == null) {
-            $this->_body = new TrainBody;
-        }
-        return $this->_body;
-   }
-
 }

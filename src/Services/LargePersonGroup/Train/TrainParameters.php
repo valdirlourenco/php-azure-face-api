@@ -2,8 +2,8 @@
 
 namespace SmartDog23\AzureFaceApi\Services\LargePersonGroup\Train;
 
-class TrainParameters {
-
+class TrainParameters
+{
     private $_largePersonGroupId;
 
     public function __construct()
@@ -27,7 +27,4 @@ class TrainParameters {
         $return['largePersonGroupId'] = $this->_largePersonGroupId;
         return $return;
     }
-
-
-
 }

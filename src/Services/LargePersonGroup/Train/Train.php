@@ -2,31 +2,21 @@
 
 namespace SmartDog23\AzureFaceApi\Services\LargePersonGroup\Train;
 
-class Train {
+use SmartDog23\AzureFaceApi\Services\LargePersonGroup\Create\CreateOptions;
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiService;
 
-    private $_client;
-    private $_options;
-
+class Train extends AzureFaceApiService
+{
     public function __construct($client)
     {
-        $this->_client = $client;
+        parent::__construct($client);
+        $this->_optionsClass = CreateOptions::class;
     }
 
     public function executeWithOptions($options = null)
     {
-
-        if(is_null($options)) {
-            $options = new TrainOptions();
-        }
-        $this->_options = $options;
-
-        $options = [];
-        $options['headers'] = $this->_options->headers()->toArray();
-        $options['query'] = $this->_options->parameters()->toArray();
-        $options['body'] = $this->_options->body()->toJson();
-        $url = 'largepersongroups/'.$this->_options->parameters()->getLargePersonGroupId().'/train';
-        $response = $this->_client->request('POST', $url, $options);
-        return $response;
+        $url = 'largepersongroups/' . $options->parameters()->getLargePersonGroupId() . '/train';
+        return $this->_executeWithOptionsCall($options, $url, 'POST');
     }
 
     public function execute($largePersonGroupId)

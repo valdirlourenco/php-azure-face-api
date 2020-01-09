@@ -2,30 +2,20 @@
 
 namespace SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\AddFace;
 
-class AddFaceBody {
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiBody;
 
+class AddFaceBody extends AzureFaceApiBody
+{
     private $_url;
 
     public function __construct()
     {
         $this->_url = '';
+        $this->castArray = ['url'];
     }
 
     public function url($value)
     {
         $this->_url = $value;
     }
-
-    public function toArray()
-    {
-        $return = [];
-        $return['url'] = $this->_url;
-        return $return;
-    }
-
-    public function toJson()
-    {
-        return json_encode($this->toArray());
-    }
-
 }

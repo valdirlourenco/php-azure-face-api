@@ -2,38 +2,14 @@
 
 namespace SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\AddFace;
 
-class AddFaceOptions {
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiOptions;
 
-    private $_parameters;
-    private $_headers;
-    private $_body;
-
+class AddFaceOptions extends AzureFaceApiOptions
+{
     public function __construct()
     {
+        $this->_parametersClass = AddFaceParameters::class;
+        $this->_headersClass = AddFaceHeaders::class;
+        $this->_bodyClass = AddFaceBody::class;
     }
-
-   public function parameters()
-   {
-        if($this->_parameters == null) {
-            $this->_parameters = new AddFaceParameters;
-        }
-        return $this->_parameters;
-   }
-
-   public function headers()
-   {
-        if($this->_headers == null) {
-            $this->_headers = new AddFaceHeaders;
-        }
-        return $this->_headers;
-   }
-
-   public function body()
-   {
-        if($this->_body == null) {
-            $this->_body = new AddFaceBody;
-        }
-        return $this->_body;
-   }
-
 }

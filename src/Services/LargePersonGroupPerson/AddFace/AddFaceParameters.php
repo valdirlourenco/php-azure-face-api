@@ -3,9 +3,10 @@
 namespace SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\AddFace;
 
 use SmartDog23\AzureFaceApi\AzureFaceApi;
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiParameters;
 
-class AddFaceParameters {
-
+class AddFaceParameters extends AzureFaceApiParameters
+{
     private $_largePersonGroupId;
     private $_personId;
     private $_userData;
@@ -19,6 +20,7 @@ class AddFaceParameters {
         $this->_userData = '';
         $this->_targetFace = '';
         $this->_detectionModel = AzureFaceApi::DETECTION_02;
+        $this->castArray(['largePersonGroupId', 'personId', 'userData', 'targetFace', 'detectionModel']);
     }
 
     public function largePersonGroupId($value)
@@ -55,18 +57,4 @@ class AddFaceParameters {
     {
         $this->_detectionModel = $value;
     }
-
-    public function toArray()
-    {
-        $return = [];
-        $return['largePersonGroupId'] = $this->_largePersonGroupId;
-        $return['personId'] = $this->_personId;
-        $return['userData'] = $this->_userData;
-        $return['targetFace'] = $this->_targetFace;
-        $return['detectionModel'] = $this->_detectionModel;
-        return $return;
-    }
-
-
-
 }

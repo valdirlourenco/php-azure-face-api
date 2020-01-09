@@ -2,38 +2,14 @@
 
 namespace SmartDog23\AzureFaceApi\Services\Face\Identify;
 
-class IdentifyOptions {
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiOptions;
 
-    private $_parameters;
-    private $_headers;
-    private $_body;
-
+class IdentifyOptions extends AzureFaceApiOptions
+{
     public function __construct()
     {
+        $this->_parametersClass = IdentifyParameters::class;
+        $this->_headersClass = IdentifyHeaders::class;
+        $this->_bodyClass = IdentifyBody::class;
     }
-
-   public function parameters()
-   {
-        if($this->_parameters == null) {
-            $this->_parameters = new IdentifyParameters;
-        }
-        return $this->_parameters;
-   }
-
-   public function headers()
-   {
-        if($this->_headers == null) {
-            $this->_headers = new IdentifyHeaders;
-        }
-        return $this->_headers;
-   }
-
-   public function body()
-   {
-        if($this->_body == null) {
-            $this->_body = new IdentifyBody;
-        }
-        return $this->_body;
-   }
-
 }

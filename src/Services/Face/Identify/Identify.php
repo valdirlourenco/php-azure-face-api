@@ -2,29 +2,21 @@
 
 namespace SmartDog23\AzureFaceApi\Services\Face\Identify;
 
-class Identify {
+use SmartDog23\AzureFaceApi\Services\LargePersonGroup\Create\CreateOptions;
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiService;
 
-    private $_client;
-    private $_options;
-
+class Identify extends AzureFaceApiService
+{
     public function __construct($client)
     {
-        $this->_client = $client;
+        parent::__construct($client);
+        $this->_optionsClass = IdentifyOptions::class;
     }
 
     public function executeWithOptions($options = null)
     {
-        if(is_null($options)) {
-            $options = new IdentifyOptions();
-        }
-        $this->_options = $options;
-
-        $options = [];
-        $options['headers'] = $this->_options->headers()->toArray();
-        $options['query'] = $this->_options->parameters()->toArray();
-        $options['body'] = $this->_options->body()->toJson();
-        $response = $this->_client->request('POST', 'identify', $options);
-        return $response;
+        $url = 'identify';
+        return $this->_executeWithOptionsCall($options, $url, 'POST');
     }
 
     public function execute($faceIds, $largePersonGroupId, $personGroupId = null, $maxNumOfCandidatesReturned = 10)

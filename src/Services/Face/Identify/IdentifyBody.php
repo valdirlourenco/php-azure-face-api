@@ -2,8 +2,11 @@
 
 namespace SmartDog23\AzureFaceApi\Services\Face\Identify;
 
-class IdentifyBody {
+use SmartDog23\AzureFaceApi\AzureFaceApi;
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiBody;
 
+class IdentifyBody extends AzureFaceApiBody
+{
     private $_personGroupId;
     private $_largePersonGroupId;
     private $_faceIds;
@@ -17,6 +20,7 @@ class IdentifyBody {
         $this->_faceIds = '';
         $this->_maxNumOfCandidatesReturned = '10';
         $this->_confidenceThreshold = '';
+        $this->castArray = ['personGroupId', 'largePersonGroupId', 'faceIds', 'maxNumOfCandidatesReturned', 'confidenceThreshold'];
     }
 
     public function personGroupId($value)
@@ -43,21 +47,4 @@ class IdentifyBody {
     {
         $this->_confidenceThreshold = $value;
     }
-
-    public function toArray()
-    {
-        $return = [];
-        $return['personGroupId'] = $this->_personGroupId;
-        $return['largePersonGroupId'] = $this->_largePersonGroupId;
-        $return['faceIds'] = [$this->_faceIds];
-        $return['maxNumOfCandidatesReturned'] = $this->_maxNumOfCandidatesReturned;
-        $return['confidenceThreshold'] = $this->_confidenceThreshold;
-        return $return;
-    }
-
-    public function toJson()
-    {
-        return json_encode($this->toArray());
-    }
-
 }

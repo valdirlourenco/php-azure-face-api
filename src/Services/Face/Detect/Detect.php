@@ -10,21 +10,13 @@ class Detect extends AzureFaceApiService
     public function __construct($client)
     {
         parent::__construct($client);
+        $this->_optionsClass = DetectOptions::class;
     }
 
     public function executeWithOptions($options = null)
     {
-        if (is_null($options)) {
-            $options = new DetectOptions();
-        }
-//        $this->_options = $options;
-
-        $optionsRequest = [];
-        $optionsRequest['headers'] = $options->headers()->toArray();
-        $optionsRequest['query'] = $options->parameters()->toArray();
-        $optionsRequest['body'] = $options->body()->toJson();
-        $response = $this->_client->request('POST', 'detect', $options);
-        return $response;
+        $url = 'detect';
+        return $this->_executeWithOptionsCall($options, $url, 'POST');
     }
 
     public function execute($url, $returnFaceId = true, $returnFaceLandmarks = false, $returnFaceAttributes = '', $recognitionModel = AzureFaceApi::RECOGNITION_02, $returnRecognitionModel = false, $detectionModel = AzureFaceApi::DETECTION_02)

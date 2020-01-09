@@ -3,12 +3,11 @@
 namespace SmartDog23\AzureFaceApi\Services\Face\Detect;
 
 use SmartDog23\AzureFaceApi\AzureFaceApi;
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiParameters;
 use SmartDog23\AzureFaceApi\Utilities\Traits\CastTrait;
 
-class DetectParameters {
-
-    use CastTrait;
-
+class DetectParameters extends AzureFaceApiParameters
+{
     private $_returnFaceId;
     private $_returnFaceLandmarks;
     private $_returnFaceAttributes;
@@ -57,7 +56,9 @@ class DetectParameters {
     {
         $args = func_get_args();
         $attributes = '';
-        if(!is_null($args)) { $attributes = implode(',', $args); }
+        if (!is_null($args)) {
+            $attributes = implode(',', $args);
+        }
         $this->_returnFaceAttributes = $attributes;
     }
 

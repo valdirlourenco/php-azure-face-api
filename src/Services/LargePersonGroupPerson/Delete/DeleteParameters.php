@@ -2,14 +2,19 @@
 
 namespace SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\Delete;
 
-class DeleteParameters {
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiParameters;
 
-    private $_largePersonGroupId;
-    private $_personId;
+class DeleteParameters extends AzureFaceApiParameters
+{
+
+    protected $_largePersonGroupId;
+    protected $_personId;
 
     public function __construct()
     {
         $this->_largePersonGroupId = '';
+        $this->_personId = '';
+        $this->castArray = ['largePersonGroupId', 'personId'];
     }
 
     public function largePersonGroupId($value)
@@ -17,7 +22,7 @@ class DeleteParameters {
         $this->_largePersonGroupId = $value;
     }
 
-    public function getLargePersonGroupId()
+    public function _getLargePersonGroupId()
     {
         return $this->_largePersonGroupId;
     }
@@ -27,15 +32,8 @@ class DeleteParameters {
         $this->_personId = $value;
     }
 
-    public function getPersonId()
+    public function _getPersonId()
     {
         return $this->_personId;
-    }
-
-    public function toArray()
-    {
-        $return = [];
-        $return['largePersonGroupId'] = $this->_largePersonGroupId;
-        return $return;
     }
 }

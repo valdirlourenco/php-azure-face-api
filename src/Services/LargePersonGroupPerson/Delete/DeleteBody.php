@@ -2,38 +2,11 @@
 
 namespace SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\Delete;
 
-class DeleteBody {
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiBody;
 
-    private $_name;
-    private $_userData;
-
+class DeleteBody extends AzureFaceApiBody
+{
     public function __construct()
     {
-        $this->_name = '';
-        $this->_userData = '';
     }
-
-    public function name($value)
-    {
-        $this->_name = $value;
-    }
-
-    public function userData($value)
-    {
-        $this->_userData = $value;
-    }
-
-    public function toArray()
-    {
-        $return = [];
-        $return['name'] = $this->_name;
-        $return['userData'] = $this->_userData;
-        return $return;
-    }
-
-    public function toJson()
-    {
-        return json_encode($this->toArray());
-    }
-
 }

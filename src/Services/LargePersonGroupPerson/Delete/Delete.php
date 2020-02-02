@@ -2,33 +2,20 @@
 
 namespace SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\Delete;
 
-use SmartDog23\AzureFaceApi\Utilities\AzureHttpClient;
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiService;
 
-class Delete {
-
-    /** @var AzureHttpClient $_client */
-    private $_client;
-    private $_options;
-
-    public function __construct($client, $options = null)
+class Delete extends AzureFaceApiService
+{
+    public function __construct($client)
     {
-        $this->_client = $client;
+        parent::__construct($client);
+        $this->_optionsClass = DeleteOptions::class;
     }
 
-    public function executeWithOptions($options = null)
+    public function executeWithOptions(DeleteOptions $options = null)
     {
-        if(is_null($options)) {
-            $options = new DeleteOptions();
-        }
-        $this->_options = $options;
-
-        $optionsRequest = [];
-        $optionsRequest['headers'] = $this->_options->headers()->toArray();
-        $optionsRequest['query'] = $this->_options->parameters()->toArray();
-        $optionsRequest['body'] = $this->_options->body()->toJson();
-        $url = 'largepersongroups/'.$this->_options->parameters()->getLargePersonGroupId().'/persons/'.$this->_options->parameters()->getPersonId();
-        $response = $this->_client->request('DELETE', $url, $optionsRequest);
-        return $response;
+        $url = 'largepersongroups/' . $options->parameters()->_getLargePersonGroupId() . '/persons/' . $options->parameters()->_getPersonId();
+        return $this->_executeWithOptionsCall($options, $url, 'DELETE');
     }
 
     public function execute($groupId, $personId)
@@ -36,8 +23,6 @@ class Delete {
         $options = new DeleteOptions();
         $options->parameters()->largePersonGroupId($groupId);
         $options->parameters()->personId($personId);
-//        $options->body()->name($name);
-//        $options->body()->userData($userData);
         return $this->executeWithOptions($options);
     }
 }

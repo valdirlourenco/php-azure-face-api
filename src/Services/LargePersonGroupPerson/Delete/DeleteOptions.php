@@ -2,38 +2,14 @@
 
 namespace SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\Delete;
 
-class DeleteOptions {
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiOptions;
 
-    private $_parameters;
-    private $_headers;
-    private $_body;
-
+class DeleteOptions extends AzureFaceApiOptions
+{
     public function __construct()
     {
+        $this->_parametersClass = DeleteParameters::class;
+        $this->_headersClass = DeleteHeaders::class;
+        $this->_bodyClass = DeleteBody::class;
     }
-
-   public function parameters()
-   {
-        if($this->_parameters == null) {
-            $this->_parameters = new DeleteParameters;
-        }
-        return $this->_parameters;
-   }
-
-   public function headers()
-   {
-        if($this->_headers == null) {
-            $this->_headers = new DeleteHeaders;
-        }
-        return $this->_headers;
-   }
-
-   public function body()
-   {
-        if($this->_body == null) {
-            $this->_body = new DeleteBody;
-        }
-        return $this->_body;
-   }
-
 }

@@ -7,11 +7,11 @@ use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiParameters;
 
 class AddFaceParameters extends AzureFaceApiParameters
 {
-    private $_largePersonGroupId;
-    private $_personId;
-    private $_userData;
-    private $_targetFace;
-    private $_detectionModel;
+    protected $_largePersonGroupId;
+    protected $_personId;
+    protected $_userData;
+    protected $_targetFace;
+    protected $_detectionModel;
 
     public function __construct()
     {
@@ -20,7 +20,7 @@ class AddFaceParameters extends AzureFaceApiParameters
         $this->_userData = '';
         $this->_targetFace = '';
         $this->_detectionModel = AzureFaceApi::DETECTION_02;
-        $this->castArray(['largePersonGroupId', 'personId', 'userData', 'targetFace', 'detectionModel']);
+        $this->castArray = ['largePersonGroupId', 'personId', 'userData', 'targetFace', 'detectionModel'];
     }
 
     public function largePersonGroupId($value)

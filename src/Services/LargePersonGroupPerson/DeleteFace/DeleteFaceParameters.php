@@ -6,9 +6,9 @@ use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiParameters;
 
 class DeleteFaceParameters extends AzureFaceApiParameters
 {
-    private $_largePersonGroupId;
-    private $_personId;
-    private $_persistedFaceId;
+    protected $_largePersonGroupId;
+    protected $_personId;
+    protected $_persistedFaceId;
 
     public function __construct()
     {
@@ -44,14 +44,5 @@ class DeleteFaceParameters extends AzureFaceApiParameters
     public function getPersistedFaceId()
     {
         return $this->_persistedFaceId;
-    }
-
-    public function toArray()
-    {
-        $return = [];
-        $return['largePersonGroupId'] = $this->_largePersonGroupId;
-        $return['personId'] = $this->_personId;
-        $return['persistedFaceId'] = $this->_persistedFaceId;
-        return $return;
     }
 }

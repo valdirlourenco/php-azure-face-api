@@ -17,12 +17,12 @@ class LargePersonGroupPerson {
         $this->_client = $client;
     }
 
-    public function addFace($options = null)
+    public function addFace()
     {
         return new AddFace($this->_client);
     }
 
-    public function create($options = null)
+    public function create()
     {
         return new Create($this->_client);
     }
@@ -37,7 +37,7 @@ class LargePersonGroupPerson {
         return new DeleteFace($this->_client);
     }
 
-    public function get($options = null)
+    public function get()
     {
         return new Get($this->_client);
     }

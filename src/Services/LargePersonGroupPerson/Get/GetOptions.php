@@ -2,38 +2,14 @@
 
 namespace SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\Get;
 
-class GetOptions {
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiOptions;
 
-    private $_parameters;
-    private $_headers;
-    private $_body;
-
+class GetOptions extends AzureFaceApiOptions
+{
     public function __construct()
     {
+        $this->_parametersClass = GetParameters::class;
+        $this->_headersClass = GetHeaders::class;
+        $this->_bodyClass = GetBody::class;
     }
-
-   public function parameters()
-   {
-        if($this->_parameters == null) {
-            $this->_parameters = new GetParameters;
-        }
-        return $this->_parameters;
-   }
-
-   public function headers()
-   {
-        if($this->_headers == null) {
-            $this->_headers = new GetHeaders;
-        }
-        return $this->_headers;
-   }
-
-   public function body()
-   {
-        if($this->_body == null) {
-            $this->_body = new GetBody;
-        }
-        return $this->_body;
-   }
-
 }

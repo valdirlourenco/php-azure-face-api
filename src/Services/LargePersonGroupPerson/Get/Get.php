@@ -2,32 +2,23 @@
 
 namespace SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\Get;
 
-class Get {
+use SmartDog23\AzureFaceApi\Services\LargePersonGroup\Create\CreateOptions;
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiService;
 
-    private $_client;
-    private $_options;
-
+class Get  extends AzureFaceApiService
+{
     public function __construct($client)
     {
-        $this->_client = $client;
+        parent::__construct($client);
+        $this->_optionsClass = GetOptions::class;
     }
 
-    public function executeWithOptions($options = null)
+    public function executeWithOptions(GetOptions $options = null)
     {
-        if(is_null($options)) {
-            $options = new GetOptions();
-        }
-        $this->_options = $options;
-
-        $optionsRequest = [];
-        $optionsRequest['headers'] = $this->_options->headers()->toArray();
-        $optionsRequest['query'] = $this->_options->parameters()->toArray();
-        $optionsRequest['body'] = $this->_options->body()->toJson();
-        $largePersonGroupId = $this->_options->parameters()->getLargePersonGroupId();
-        $personId = $this->_options->parameters()->getPersonId();
+        $largePersonGroupId = $options->parameters()->getLargePersonGroupId();
+        $personId = $options->parameters()->getPersonId();
         $url = 'largepersongroups/'.$largePersonGroupId.'/persons/'.$personId;
-        $response = $this->_client->request('GET', $url, $optionsRequest);
-        return $response;
+        return $this->_executeWithOptionsCall($options, $url, 'GET');
     }
 
     public function execute($groupId, $personId)

@@ -2,21 +2,12 @@
 
 namespace SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\Get;
 
-class GetBody {
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiBody;
 
+class GetBody  extends AzureFaceApiBody
+{
     public function __construct()
     {
+        $this->castArray = [];
     }
-
-    public function toArray()
-    {
-        $return = [];
-        return $return;
-    }
-
-    public function toJson()
-    {
-        return json_encode($this->toArray());
-    }
-
 }

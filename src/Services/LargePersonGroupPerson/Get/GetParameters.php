@@ -2,23 +2,17 @@
 
 namespace SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\Get;
 
-use SmartDog23\AzureFaceApi\AzureFaceApi;
+use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiParameters;
 
-class GetParameters {
-
+class GetParameters extends AzureFaceApiParameters
+{
     private $_largePersonGroupId;
     private $_personId;
-    private $_userData;
-    private $_targetFace;
-    private $_detectionModel;
 
     public function __construct()
     {
         $this->_largePersonGroupId = '';
         $this->_personId = '';
-        $this->_userData = '';
-        $this->_targetFace = '';
-        $this->_detectionModel = AzureFaceApi::DETECTION_02;
     }
 
     public function largePersonGroupId($value)
@@ -39,18 +33,5 @@ class GetParameters {
     public function getPersonId()
     {
         return $this->_personId;
-    }
-
-    public function toArray()
-    {
-        $return = [];
-        $return['largePersonGroupId'] = $this->_largePersonGroupId;
-        $return['personId'] = $this->_personId;
-        return $return;
-    }
-
-    public function toJson()
-    {
-        return json_encode($this->toArray());
     }
 }

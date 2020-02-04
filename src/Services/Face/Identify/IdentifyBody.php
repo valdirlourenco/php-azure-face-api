@@ -7,17 +7,17 @@ use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiBody;
 
 class IdentifyBody extends AzureFaceApiBody
 {
-    private $_personGroupId;
-    private $_largePersonGroupId;
-    private $_faceIds;
-    private $_maxNumOfCandidatesReturned;
-    private $_confidenceThreshold;
+    protected $_personGroupId;
+    protected $_largePersonGroupId;
+    protected $_faceIds;
+    protected $_maxNumOfCandidatesReturned;
+    protected $_confidenceThreshold;
 
     public function __construct()
     {
         $this->_personGroupId = '';
         $this->_largePersonGroupId = '';
-        $this->_faceIds = '';
+        $this->_faceIds = [];
         $this->_maxNumOfCandidatesReturned = '10';
         $this->_confidenceThreshold = '';
         $this->castArray = ['personGroupId', 'largePersonGroupId', 'faceIds', 'maxNumOfCandidatesReturned', 'confidenceThreshold'];
@@ -35,7 +35,7 @@ class IdentifyBody extends AzureFaceApiBody
 
     public function faceIds($value)
     {
-        $this->_faceIds = $value;
+        $this->_faceIds[] = $value;
     }
 
     public function maxNumOfCandidatesReturned($value)

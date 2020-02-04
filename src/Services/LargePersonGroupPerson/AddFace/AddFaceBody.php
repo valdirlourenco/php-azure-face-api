@@ -6,7 +6,7 @@ use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiBody;
 
 class AddFaceBody extends AzureFaceApiBody
 {
-    private $_url;
+    protected $_url;
 
     public function __construct()
     {

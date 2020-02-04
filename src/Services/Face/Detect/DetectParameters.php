@@ -8,12 +8,12 @@ use SmartDog23\AzureFaceApi\Utilities\Traits\CastTrait;
 
 class DetectParameters extends AzureFaceApiParameters
 {
-    private $_returnFaceId;
-    private $_returnFaceLandmarks;
-    private $_returnFaceAttributes;
-    private $_recognitionModel;
-    private $_returnRecognitionModel;
-    private $_detectionModel;
+    protected $_returnFaceId;
+    protected $_returnFaceLandmarks;
+    protected $_returnFaceAttributes;
+    protected $_recognitionModel;
+    protected $_returnRecognitionModel;
+    protected $_detectionModel;
 
     const ATTRIBUTE_AGE = 'age';
     const ATTRIBUTE_GENDER = 'gender';

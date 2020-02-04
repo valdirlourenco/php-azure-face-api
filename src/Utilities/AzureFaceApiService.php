@@ -29,6 +29,7 @@ class AzureFaceApiService
         $optionsRequest['headers'] = $options->headers()->toArray();
         $optionsRequest['query'] = $options->parameters()->toArray();
         $optionsRequest['body'] = $options->body()->toJson();
+        dump($options->body()->toJson());
 //        $url = 'largepersongroups/' . $options->parameters()->getLargePersonGroupId();
         $response = $this->_client->request($method, $url, $optionsRequest);
         return $response;

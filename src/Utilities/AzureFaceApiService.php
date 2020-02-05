@@ -17,20 +17,16 @@ class AzureFaceApiService
         $this->_client = $client;
     }
 
+    protected function executeWithOptions($options, $url, $method) {
+        return $this->_executeWithOptionsCall($options, $url, $method);
+    }
+
     protected function _executeWithOptionsCall($options, $url, $method)
     {
-//        if (is_null($options)) {
-//            $options = new $this->_optionsClass;
-//        }
-
-
-
         $optionsRequest = [];
         $optionsRequest['headers'] = $options->headers()->toArray();
         $optionsRequest['query'] = $options->parameters()->toArray();
         $optionsRequest['body'] = $options->body()->toJson();
-        dump($options->body()->toJson());
-//        $url = 'largepersongroups/' . $options->parameters()->getLargePersonGroupId();
         $response = $this->_client->request($method, $url, $optionsRequest);
         return $response;
     }

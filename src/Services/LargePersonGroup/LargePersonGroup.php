@@ -3,6 +3,7 @@
 namespace SmartDog23\AzureFaceApi\Services\LargePersonGroup;
 
 use SmartDog23\AzureFaceApi\Services\LargePersonGroup\Create\Create;
+use SmartDog23\AzureFaceApi\Services\LargePersonGroup\Delete\Delete;
 use SmartDog23\AzureFaceApi\Services\LargePersonGroup\Train\Train;
 
 class LargePersonGroup {
@@ -21,7 +22,7 @@ class LargePersonGroup {
 
     public function delete()
     {
-
+        return new Delete($this->_client);
     }
 
     public function get()

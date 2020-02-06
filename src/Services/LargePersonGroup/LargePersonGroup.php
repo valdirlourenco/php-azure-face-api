@@ -2,6 +2,7 @@
 
 namespace SmartDog23\AzureFaceApi\Services\LargePersonGroup;
 
+use SmartDog23\AzureFaceApi\Services\LargePersonGroup\Get\Get;
 use SmartDog23\AzureFaceApi\Services\LargePersonGroup\Create\Create;
 use SmartDog23\AzureFaceApi\Services\LargePersonGroup\Delete\Delete;
 use SmartDog23\AzureFaceApi\Services\LargePersonGroup\GetTrainingStatus\GetTrainingStatus;
@@ -28,7 +29,7 @@ class LargePersonGroup {
 
     public function get()
     {
-
+        return new Get($this->_client);
     }
 
     public function getTrainingStatus()

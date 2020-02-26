@@ -9,6 +9,7 @@ class AzureFaceApiHeaders {
     private $_paramsArray;
 
     const CONTENT_TYPE_JSON = 'application/json';
+    const CONTENT_TYPE_OCTET_STREAM = 'application/octet-stream';
 
     protected function __construct()
     {

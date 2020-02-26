@@ -8,7 +8,19 @@ class AzureFaceApiBody
 {
     use CastTrait;
 
+    private $_isMultipart = false;
+
     public function __construct()
     {
+    }
+
+    public function isMultipart()
+    {
+        return $this->_isMultipart;
+    }
+
+    public function setBodyAsMultipart()
+    {
+        $this->_isMultipart = true;
     }
 }

@@ -7,6 +7,7 @@ use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiBody;
 class AddFaceBody extends AzureFaceApiBody
 {
     protected $_url;
+    protected $_image;
 
     public function __construct()
     {
@@ -17,5 +18,16 @@ class AddFaceBody extends AzureFaceApiBody
     public function url($value)
     {
         $this->_url = $value;
+    }
+
+    public function getMultipart()
+    {
+        return $this->_image;
+    }
+
+    public function image($data)
+    {
+        $this->setBodyAsMultipart();
+        $this->_image = $data;
     }
 }

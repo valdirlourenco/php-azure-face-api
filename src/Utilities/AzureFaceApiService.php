@@ -23,8 +23,8 @@ class AzureFaceApiService
         $optionsRequest['headers'] = $options->headers()->toArray();
         $optionsRequest['query'] = $options->parameters()->toArray();
         $optionsRequest['body'] = $options->body()->toJson();
-        if($options->body()->isMultipart()) {
-            $optionsRequest['body'] = $options->body()->getMultipart();
+        if($options->body()->isOctet()) {
+            $optionsRequest['body'] = $options->body()->getOctet();
         }
         $response = $this->_client->request($method, $url, $optionsRequest);
         return $response;

@@ -20,14 +20,14 @@ class AddFaceBody extends AzureFaceApiBody
         $this->_url = $value;
     }
 
-    public function getMultipart()
+    public function getOctet()
     {
         return $this->_image;
     }
 
     public function image($data)
     {
-        $this->setBodyAsMultipart();
+        $this->setBodyAsOctet();
         $this->_image = $data;
     }
 }

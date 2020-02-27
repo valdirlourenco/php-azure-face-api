@@ -8,19 +8,19 @@ class AzureFaceApiBody
 {
     use CastTrait;
 
-    private $_isMultipart = false;
+    private $_isOctet = false;
 
     public function __construct()
     {
     }
 
-    public function isMultipart()
+    public function isOctet()
     {
-        return $this->_isMultipart;
+        return $this->_isOctet;
     }
 
-    public function setBodyAsMultipart()
+    public function setBodyAsOctet()
     {
-        $this->_isMultipart = true;
+        $this->_isOctet = true;
     }
 }

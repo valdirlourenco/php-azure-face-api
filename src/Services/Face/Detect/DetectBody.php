@@ -7,6 +7,7 @@ use SmartDog23\AzureFaceApi\Utilities\AzureFaceApiBody;
 class DetectBody extends AzureFaceApiBody
 {
     protected $_url;
+    protected $_image;
 
     public function __construct()
     {
@@ -17,5 +18,16 @@ class DetectBody extends AzureFaceApiBody
     public function url($value)
     {
         $this->_url = $value;
+    }
+
+    public function getOctet()
+    {
+        return $this->_image;
+    }
+
+    public function image($data)
+    {
+        $this->setBodyAsOctet();
+        $this->_image = $data;
     }
 }

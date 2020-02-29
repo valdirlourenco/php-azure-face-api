@@ -16,12 +16,12 @@ class CreateBody extends AzureFaceApiBody
         $this->castArray = ['name', 'userData'];
     }
 
-    public function name($value)
+    public function setName($value)
     {
         $this->_name = $value;
     }
 
-    public function userData($value)
+    public function setUserData($value)
     {
         $this->_userData = $value;
     }

@@ -15,7 +15,7 @@ class AddFaceBody extends AzureFaceApiBody
         $this->castArray = ['url'];
     }
 
-    public function url($value)
+    public function setUrl($value)
     {
         $this->_url = $value;
     }
@@ -25,7 +25,7 @@ class AddFaceBody extends AzureFaceApiBody
         return $this->_image;
     }
 
-    public function image($data)
+    public function setImage($data)
     {
         $this->setBodyAsOctet();
         $this->_image = $data;

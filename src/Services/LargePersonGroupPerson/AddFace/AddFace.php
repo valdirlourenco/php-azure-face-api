@@ -23,10 +23,10 @@ class AddFace extends AzureFaceApiService
     public function execute($groupId, $personId, $userData, $imageUrl)
     {
         $options = new AddFaceOptions();
-        $options->parameters()->largePersonGroupId($groupId);
-        $options->parameters()->personId($personId);
-        $options->parameters()->userData($userData);
-        $options->body()->url($imageUrl);
+        $options->parameters()->setLargePersonGroupId($groupId);
+        $options->parameters()->setPersonId($personId);
+        $options->parameters()->setUserData($userData);
+        $options->body()->setUrl($imageUrl);
         return $this->executeWithOptions($options);
     }
 }

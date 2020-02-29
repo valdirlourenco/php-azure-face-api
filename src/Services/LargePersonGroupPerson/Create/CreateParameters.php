@@ -14,7 +14,7 @@ class CreateParameters extends AzureFaceApiParameters
         $this->castArray = ['largePersonGroupId'];
     }
 
-    public function largePersonGroupId($value)
+    public function setLargePersonGroupId($value)
     {
         $this->_largePersonGroupId = $value;
     }

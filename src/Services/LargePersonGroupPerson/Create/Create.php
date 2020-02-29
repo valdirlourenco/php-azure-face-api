@@ -23,9 +23,9 @@ class Create extends AzureFaceApiService
     public function execute($groupId, $name, $userData = null)
     {
         $options = new CreateOptions();
-        $options->parameters()->largePersonGroupId($groupId);
-        $options->body()->name($name);
-        $options->body()->userData($userData);
+        $options->parameters()->setLargePersonGroupId($groupId);
+        $options->body()->setName($name);
+        $options->body()->setUserData($userData);
         return $this->executeWithOptions($options);
     }
 }

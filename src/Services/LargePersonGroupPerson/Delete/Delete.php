@@ -14,15 +14,15 @@ class Delete extends AzureFaceApiService
 
     public function executeWithOptions(DeleteOptions $options = null)
     {
-        $url = 'largepersongroups/' . $options->parameters()->_getLargePersonGroupId() . '/persons/' . $options->parameters()->_getPersonId();
+        $url = 'largepersongroups/' . $options->parameters()->getLargePersonGroupId() . '/persons/' . $options->parameters()->getPersonId();
         return $this->_executeWithOptionsCall($options, $url, 'DELETE');
     }
 
     public function execute($groupId, $personId)
     {
         $options = new DeleteOptions();
-        $options->parameters()->largePersonGroupId($groupId);
-        $options->parameters()->personId($personId);
+        $options->parameters()->setLargePersonGroupId($groupId);
+        $options->parameters()->setPersonId($personId);
         return $this->executeWithOptions($options);
     }
 }

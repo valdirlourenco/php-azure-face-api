@@ -15,7 +15,7 @@ class GetParameters extends AzureFaceApiParameters
         $this->_personId = '';
     }
 
-    public function largePersonGroupId($value)
+    public function setLargePersonGroupId($value)
     {
         $this->_largePersonGroupId = $value;
     }
@@ -25,7 +25,7 @@ class GetParameters extends AzureFaceApiParameters
         return $this->_largePersonGroupId;
     }
 
-    public function personId($value)
+    public function setPersonId($value)
     {
         $this->_personId = $value;
     }

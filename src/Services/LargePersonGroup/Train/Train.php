@@ -22,7 +22,7 @@ class Train extends AzureFaceApiService
     public function execute($largePersonGroupId)
     {
         $options = new TrainOptions();
-        $options->parameters()->largePersonGroupId($largePersonGroupId);
+        $options->parameters()->setLargePersonGroupId($largePersonGroupId);
         return $this->executeWithOptions($options);
     }
 }

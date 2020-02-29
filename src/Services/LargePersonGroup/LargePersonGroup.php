@@ -17,7 +17,7 @@ class LargePersonGroup {
         $this->_client = $client;
     }
 
-    public function create($options = null)
+    public function create()
     {
         return new Create($this->_client);
     }
@@ -42,7 +42,7 @@ class LargePersonGroup {
 
     }
 
-    public function train($options = null)
+    public function train()
     {
         return new Train($this->_client);
     }

@@ -19,17 +19,17 @@ class CreateBody extends AzureFaceApiBody {
         $this->castArray = ['name', 'userData', 'recognitionModel'];
     }
 
-    public function name($value)
+    public function setName($value)
     {
         $this->_name = $value;
     }
 
-    public function userData($value)
+    public function setUserData($value)
     {
         $this->_userData = $value;
     }
 
-    public function recognitionModel($value)
+    public function setRecognitionModel($value)
     {
         $this->_recognitionModel = $value;
     }

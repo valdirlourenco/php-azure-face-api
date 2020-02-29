@@ -22,10 +22,10 @@ class Identify extends AzureFaceApiService
     public function execute($faceIds, $largePersonGroupId, $personGroupId = null, $maxNumOfCandidatesReturned = 10)
     {
         $options = new IdentifyOptions();
-        $options->body()->faceIds($faceIds);
-        $options->body()->largePersonGroupId($largePersonGroupId);
-        $options->body()->personGroupId($personGroupId);
-        $options->body()->maxNumOfCandidatesReturned($maxNumOfCandidatesReturned);
+        $options->body()->setFaceIds($faceIds);
+        $options->body()->setLargePersonGroupId($largePersonGroupId);
+        $options->body()->setPersonGroupId($personGroupId);
+        $options->body()->setMaxNumOfCandidatesReturned($maxNumOfCandidatesReturned);
         return $this->executeWithOptions($options);
     }
 }

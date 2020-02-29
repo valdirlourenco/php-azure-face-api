@@ -42,17 +42,17 @@ class DetectParameters extends AzureFaceApiParameters
         $this->castArray = ['returnFaceId', 'returnFaceLandmarks', 'returnFaceAttributes', 'recognitionModel', 'returnRecognitionModel', 'detectionModel'];
     }
 
-    public function returnFaceId($value)
+    public function setReturnFaceId($value)
     {
         $this->_returnFaceId = $value;
     }
 
-    public function returnFaceLandmarks($value)
+    public function setReturnFaceLandmarks($value)
     {
         $this->_returnFaceLandmarks = $value;
     }
 
-    public function returnFaceAttributes()
+    public function setReturnFaceAttributes()
     {
         $args = func_get_args();
         $attributes = '';
@@ -62,17 +62,17 @@ class DetectParameters extends AzureFaceApiParameters
         $this->_returnFaceAttributes = $attributes;
     }
 
-    public function recognitionModel($value)
+    public function setRecognitionModel($value)
     {
         $this->_recognitionModel = $value;
     }
 
-    public function returnRecognitionModel($value)
+    public function setReturnRecognitionModel($value)
     {
         $this->_returnRecognitionModel = $value;
     }
 
-    public function detectionModel($value)
+    public function setDetectionModel($value)
     {
         $this->_detectionModel = $value;
     }

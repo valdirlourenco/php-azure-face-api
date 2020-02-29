@@ -22,13 +22,13 @@ class Detect extends AzureFaceApiService
     public function execute($url, $returnFaceId = true, $returnFaceLandmarks = false, $returnFaceAttributes = '', $recognitionModel = AzureFaceApi::RECOGNITION_02, $returnRecognitionModel = false, $detectionModel = AzureFaceApi::DETECTION_02)
     {
         $options = new DetectOptions();
-        $options->parameters()->returnFaceId($returnFaceId);
-        $options->parameters()->returnFaceLandmarks($returnFaceLandmarks);
-        $options->parameters()->returnFaceAttributes($returnFaceAttributes);
-        $options->parameters()->recognitionModel($recognitionModel);
-        $options->parameters()->returnRecognitionModel($returnRecognitionModel);
-        $options->parameters()->detectionModel($detectionModel);
-        $options->body()->url($url);
+        $options->parameters()->setReturnFaceId($returnFaceId);
+        $options->parameters()->setReturnFaceLandmarks($returnFaceLandmarks);
+        $options->parameters()->setReturnFaceAttributes($returnFaceAttributes);
+        $options->parameters()->setRecognitionModel($recognitionModel);
+        $options->parameters()->setReturnRecognitionModel($returnRecognitionModel);
+        $options->parameters()->setDetectionModel($detectionModel);
+        $options->body()->setUrl($url);
         return $this->executeWithOptions($options);
     }
 }

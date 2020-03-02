@@ -8,6 +8,7 @@ use SmartDog23\AzureFaceApi\Services\LargePersonGroup\Delete\Delete;
 use SmartDog23\AzureFaceApi\Services\LargePersonGroup\GetTrainingStatus\GetTrainingStatus;
 use SmartDog23\AzureFaceApi\Services\LargePersonGroup\Train\Train;
 use SmartDog23\AzureFaceApi\Services\LargePersonGroup\List_\List_;
+use SmartDog23\AzureFaceApi\Services\LargePersonGroup\Update\Update;
 
 class LargePersonGroup {
 
@@ -50,6 +51,6 @@ class LargePersonGroup {
 
     public function update()
     {
-
+        return new Update($this->_client);
     }
 }

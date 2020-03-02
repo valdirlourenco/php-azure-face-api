@@ -16,7 +16,7 @@ class DeleteFaceParameters extends AzureFaceApiParameters
         $this->castArray = ['largePersonGroupId', 'personId', 'persistedFaceId'];
     }
 
-    public function largePersonGroupId($value)
+    public function setLargePersonGroupId($value)
     {
         $this->_largePersonGroupId = $value;
     }
@@ -26,7 +26,7 @@ class DeleteFaceParameters extends AzureFaceApiParameters
         return $this->_largePersonGroupId;
     }
 
-    public function personId($value)
+    public function setPersonId($value)
     {
         $this->_personId = $value;
     }
@@ -36,7 +36,7 @@ class DeleteFaceParameters extends AzureFaceApiParameters
         return $this->_personId;
     }
 
-    public function persistedFaceId($value)
+    public function setPersistedFaceId($value)
     {
         $this->_persistedFaceId = $value;
     }

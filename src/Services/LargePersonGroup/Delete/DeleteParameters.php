@@ -13,7 +13,7 @@ class DeleteParameters extends AzureFaceApiParameters
         $this->_largePersonGroupId = '';
     }
 
-    public function largePersonGroupId($value)
+    public function setLargePersonGroupId($value)
     {
         $this->_largePersonGroupId = $value;
     }

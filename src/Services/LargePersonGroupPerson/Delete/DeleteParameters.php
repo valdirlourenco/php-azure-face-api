@@ -17,22 +17,22 @@ class DeleteParameters extends AzureFaceApiParameters
         $this->castArray = ['largePersonGroupId', 'personId'];
     }
 
-    public function largePersonGroupId($value)
+    public function setLargePersonGroupId($value)
     {
         $this->_largePersonGroupId = $value;
     }
 
-    public function _getLargePersonGroupId()
+    public function getLargePersonGroupId()
     {
         return $this->_largePersonGroupId;
     }
 
-    public function personId($value)
+    public function setPersonId($value)
     {
         $this->_personId = $value;
     }
 
-    public function _getPersonId()
+    public function getPersonId()
     {
         return $this->_personId;
     }

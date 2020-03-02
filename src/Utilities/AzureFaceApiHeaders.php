@@ -13,15 +13,15 @@ class AzureFaceApiHeaders {
 
     protected function __construct()
     {
-        $this->contentType(self::CONTENT_TYPE_JSON);
+        $this->setContentType(self::CONTENT_TYPE_JSON);
     }
 
-    public function contentType($value)
+    public function setContentType($value)
     {
         $this->_contentType = $value;
     }
 
-    public function key($value)
+    public function setKey($value)
     {
         $this->_key = $value;
     }

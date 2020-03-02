@@ -21,7 +21,7 @@ class Delete extends AzureFaceApiService
     public function execute($groupId)
     {
         $options = new DeleteOptions();
-        $options->parameters()->largePersonGroupId($groupId);
+        $options->parameters()->setLargePersonGroupId($groupId);
         return $this->executeWithOptions($options);
     }
 }

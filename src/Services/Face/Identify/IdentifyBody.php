@@ -23,27 +23,27 @@ class IdentifyBody extends AzureFaceApiBody
         $this->castArray = ['personGroupId', 'largePersonGroupId', 'faceIds', 'maxNumOfCandidatesReturned', 'confidenceThreshold'];
     }
 
-    public function personGroupId($value)
+    public function setPersonGroupId($value)
     {
         $this->_personGroupId = $value;
     }
 
-    public function largePersonGroupId($value)
+    public function setLargePersonGroupId($value)
     {
         $this->_largePersonGroupId = $value;
     }
 
-    public function faceIds($value)
+    public function setFaceIds($value)
     {
         $this->_faceIds[] = $value;
     }
 
-    public function maxNumOfCandidatesReturned($value)
+    public function setMaxNumOfCandidatesReturned($value)
     {
         $this->_maxNumOfCandidatesReturned = $value;
     }
 
-    public function confidenceThreshold($value)
+    public function setConfidenceThreshold($value)
     {
         $this->_confidenceThreshold = $value;
     }

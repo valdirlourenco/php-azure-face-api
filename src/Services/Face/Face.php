@@ -14,7 +14,7 @@ class Face {
         $this->_client = $client;
     }
 
-    public function detect($options = null)
+    public function detect()
     {
         return new Detect($this->_client);
     }
@@ -29,7 +29,7 @@ class Face {
 
     }
 
-    public function identify($options = null)
+    public function identify()
     {
         return new Identify($this->_client);
     }

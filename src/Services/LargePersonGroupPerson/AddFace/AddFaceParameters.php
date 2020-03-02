@@ -23,7 +23,7 @@ class AddFaceParameters extends AzureFaceApiParameters
         $this->castArray = ['largePersonGroupId', 'personId', 'userData', 'targetFace', 'detectionModel'];
     }
 
-    public function largePersonGroupId($value)
+    public function setLargePersonGroupId($value)
     {
         $this->_largePersonGroupId = $value;
     }
@@ -33,7 +33,7 @@ class AddFaceParameters extends AzureFaceApiParameters
         return $this->_largePersonGroupId;
     }
 
-    public function personId($value)
+    public function setPersonId($value)
     {
         $this->_personId = $value;
     }
@@ -43,17 +43,17 @@ class AddFaceParameters extends AzureFaceApiParameters
         return $this->_personId;
     }
 
-    public function userData($value)
+    public function setUserData($value)
     {
         $this->_userData = $value;
     }
 
-    public function targetFace($value)
+    public function setTargetFace($value)
     {
         $this->_targetFace = $value;
     }
 
-    public function detectionModel($value)
+    public function setDetectionModel($value)
     {
         $this->_detectionModel = $value;
     }

@@ -24,8 +24,8 @@ class Get  extends AzureFaceApiService
     public function execute($groupId, $personId)
     {
         $options = new GetOptions();
-        $options->parameters()->largePersonGroupId($groupId);
-        $options->parameters()->personId($personId);
+        $options->parameters()->setLargePersonGroupId($groupId);
+        $options->parameters()->setPersonId($personId);
         return $this->executeWithOptions($options);
     }
 }

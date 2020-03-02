@@ -7,6 +7,7 @@ use SmartDog23\AzureFaceApi\Services\LargePersonGroup\Create\Create;
 use SmartDog23\AzureFaceApi\Services\LargePersonGroup\Delete\Delete;
 use SmartDog23\AzureFaceApi\Services\LargePersonGroup\GetTrainingStatus\GetTrainingStatus;
 use SmartDog23\AzureFaceApi\Services\LargePersonGroup\Train\Train;
+use SmartDog23\AzureFaceApi\Services\LargePersonGroup\List_\List_;
 
 class LargePersonGroup {
 
@@ -39,7 +40,7 @@ class LargePersonGroup {
 
     public function list()
     {
-
+        return new List_($this->_client);
     }
 
     public function train()

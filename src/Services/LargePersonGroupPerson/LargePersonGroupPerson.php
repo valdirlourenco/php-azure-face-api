@@ -4,9 +4,10 @@ namespace SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson;
 
 use SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\AddFace\AddFace;
 use SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\Create\Create;
-use SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\Get\Get;
 use SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\Delete\Delete;
 use SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\DeleteFace\DeleteFace;
+use SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\Get\Get;
+use SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\GetFace\GetFace;
 
 class LargePersonGroupPerson {
 
@@ -44,7 +45,7 @@ class LargePersonGroupPerson {
 
     public function getFace()
     {
-
+        return new GetFace($this->_client);
     }
 
     public function list()

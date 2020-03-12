@@ -10,6 +10,7 @@ use SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\Get\Get;
 use SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\GetFace\GetFace;
 use SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\List_\List_;
 use SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\Update\Update;
+use SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\UpdateFace\UpdateFace;
 
 class LargePersonGroupPerson
 {
@@ -63,7 +64,7 @@ class LargePersonGroupPerson
 
     public function updateFace()
     {
-
+        return new UpdateFace($this->_client);
     }
 
 }

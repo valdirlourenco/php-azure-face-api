@@ -8,8 +8,10 @@ use SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\Delete\Delete;
 use SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\DeleteFace\DeleteFace;
 use SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\Get\Get;
 use SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\GetFace\GetFace;
+use SmartDog23\AzureFaceApi\Services\LargePersonGroupPerson\List_\List_;
 
-class LargePersonGroupPerson {
+class LargePersonGroupPerson
+{
 
     private $_client;
 
@@ -50,7 +52,7 @@ class LargePersonGroupPerson {
 
     public function list()
     {
-
+        return new List_($this->_client);
     }
 
     public function update()
